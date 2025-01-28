@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/[01] FiremanTrial/[01] Packages/[01] Settings/Scene/ConfigScene.unity
+    guid: 517353a63979a8149a2002840d52ecc0
+  - enabled: 0
     path: Assets/[01] FiremanTrial/[03] Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects:

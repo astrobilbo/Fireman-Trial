@@ -1,0 +1,8 @@
+﻿As pastas serão nomeadas com uma numeração entre 01 e 99 entre colchetes
+
+Na pasta Assets as subPastas são definidas como:
+. As pastas de [01 - 09] contêm recursos próprios.
+. As pastas de [10 - 49] contêm recursos disponibilizados pelo Unity.
+. As pastas de [50 - 99] contêm recursos fornecidos por terceiros.
+
+Nas pastas de recursos próprios a numeração das subPastas é baseada no que esta sendo alterado no momento.
