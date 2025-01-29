@@ -7,8 +7,8 @@ namespace FiremanTrial.Settings
     public class Settings : MonoBehaviour
     {
         [SerializeField] private AudioMixer mixer;
-        [SerializeField,Range(0,20)] private  int initialVolume = 10;
-        
+        [SerializeField] private SettingsData data;
+
         //Actions → Eventos próprios das configurações, nos quais os códigos de UI se inscrevem para serem atualizados com as mudanças nos valores.
         public Action<VolumeType,int> OnVolumeChanged; 
         public Action<int> OnFraneRateChanged;
@@ -16,36 +16,43 @@ namespace FiremanTrial.Settings
         public Action<int> OnVSyncChanged;
         public Action<bool> OnFullScreenChanged;
 
-        private SettingsData _data;
+
+        private void Awake()
+        {
+            data.fullScreen = Screen.fullScreen;
+            data.graphicsQuality = QualitySettings.GetQualityLevel();
+            data.vSync = QualitySettings.vSyncCount;
+            if (data.frameRate == 0) data.frameRate = 500;
+            LoadData();
+            ApplyInitialSettings();
+        }
 
         private void Start()
         {
-            LoadData();  
             TriggerSettingCallbacks();
-            ApplyInitialSettings();
         }
-        
+
         private void TriggerSettingCallbacks() // → Atualiza a UI com os dados carregados
         {
-            OnVolumeChanged?.Invoke(VolumeType.MasterSound,_data.MasterSoundVolume); 
-            OnVolumeChanged?.Invoke(VolumeType.MusicSound,_data.MusicSoundVolume);
-            OnVolumeChanged?.Invoke(VolumeType.FxSound,_data.FXSoundVolume);
-            OnFraneRateChanged?.Invoke(_data.FrameRate);
-            OnGraphicsQualityChanged?.Invoke(_data.GraphicsQuality);
-            OnFullScreenChanged?.Invoke(_data.FullScreen);
-            OnVSyncChanged?.Invoke(_data.VSync);
+            OnVolumeChanged?.Invoke(VolumeType.MasterSound,data.masterSoundVolume); 
+            OnVolumeChanged?.Invoke(VolumeType.MusicSound,data.musicSoundVolume);
+            OnVolumeChanged?.Invoke(VolumeType.FxSound,data.fxSoundVolume);
+            OnFraneRateChanged?.Invoke(data.frameRate);
+            OnGraphicsQualityChanged?.Invoke(data.graphicsQuality);
+            OnFullScreenChanged?.Invoke(data.fullScreen);
+            OnVSyncChanged?.Invoke(data.vSync);
         }
         
         private void ApplyInitialSettings()
         {
-            mixer.SetFloat(SettingsData.VolumeKey(VolumeType.MasterSound),DBVolume(_data.MasterSoundVolume));
-            mixer.SetFloat(SettingsData.VolumeKey(VolumeType.MusicSound),DBVolume(_data.MusicSoundVolume));
-            mixer.SetFloat(SettingsData.VolumeKey(VolumeType.FxSound),DBVolume(_data.FXSoundVolume));
-            Application.targetFrameRate = _data.FrameRate;
-            QualitySettings.SetQualityLevel(_data.GraphicsQuality);
-            Screen.fullScreen = _data.FullScreen;
-            Screen.fullScreenMode = _data.FullScreen? FullScreenMode.FullScreenWindow : FullScreenMode.Windowed;
-            Application.targetFrameRate = _data.FrameRate;
+            mixer.SetFloat(SettingsData.VolumeKey(VolumeType.MasterSound),DBVolume(data.masterSoundVolume));
+            mixer.SetFloat(SettingsData.VolumeKey(VolumeType.MusicSound),DBVolume(data.musicSoundVolume));
+            mixer.SetFloat(SettingsData.VolumeKey(VolumeType.FxSound),DBVolume(data.fxSoundVolume));
+            Application.targetFrameRate = data.frameRate;
+            QualitySettings.SetQualityLevel(data.graphicsQuality);
+            Screen.fullScreen = data.fullScreen;
+            Screen.fullScreenMode = data.fullScreen? FullScreenMode.FullScreenWindow : FullScreenMode.Windowed;
+            Application.targetFrameRate = data.frameRate;
         }
 
         public int GetVolume(VolumeType key)
@@ -53,14 +60,14 @@ namespace FiremanTrial.Settings
             switch (key)
             {
                 case VolumeType.MasterSound:
-                    return _data.MasterSoundVolume;
+                    return data.masterSoundVolume;
                 case VolumeType.MusicSound:
-                    return _data.MusicSoundVolume;
+                    return data.musicSoundVolume;
                 case VolumeType.FxSound:
-                    return _data.FXSoundVolume;
+                    return data.fxSoundVolume;
                 default:
                     Debug.LogError($"VolumeType {key} not found, defaulting to {VolumeType.MasterSound}");
-                    return _data.MasterSoundVolume;
+                    return data.masterSoundVolume;
             }
         }
 
@@ -68,18 +75,14 @@ namespace FiremanTrial.Settings
         {
             switch (key)
             {
-                case VolumeType.MasterSound when !Mathf.Approximately(volume, _data.MasterSoundVolume):
-                    SetVolume(VolumeType.MasterSound, _data.MasterSoundVolume = volume);
+                case VolumeType.MasterSound when !Mathf.Approximately(volume, data.masterSoundVolume):
+                    SetVolume(VolumeType.MasterSound, data.masterSoundVolume = volume);
                     break;
-                case VolumeType.MusicSound when !Mathf.Approximately(volume, _data.MusicSoundVolume):
-                    SetVolume(VolumeType.MusicSound, _data.MusicSoundVolume = volume);
+                case VolumeType.MusicSound when !Mathf.Approximately(volume, data.musicSoundVolume):
+                    SetVolume(VolumeType.MusicSound, data.musicSoundVolume = volume);
                     break;
-                case VolumeType.FxSound when !Mathf.Approximately(volume, _data.FXSoundVolume):
-                    SetVolume(VolumeType.FxSound, _data.FXSoundVolume = volume);
-                    break;
-                default:
-                    Debug.LogError($"Key {key} not found");
-                    SetVolume(VolumeType.MasterSound, _data.MasterSoundVolume = volume);
+                case VolumeType.FxSound when !Mathf.Approximately(volume, data.fxSoundVolume):
+                    SetVolume(VolumeType.FxSound, data.fxSoundVolume = volume);
                     break;
             }
         }
@@ -95,58 +98,62 @@ namespace FiremanTrial.Settings
 
         public void ChangeGraphicsQuality(int quality)
         {
-            if (_data.GraphicsQuality == quality) return;
-            _data.GraphicsQuality = quality;
-            QualitySettings.SetQualityLevel(_data.GraphicsQuality);
+            if (data.graphicsQuality == quality) return;
+            data.graphicsQuality = quality;
+            QualitySettings.SetQualityLevel(data.graphicsQuality);
             SaveData();
-            OnGraphicsQualityChanged?.Invoke(_data.GraphicsQuality);
+            OnGraphicsQualityChanged?.Invoke(data.graphicsQuality);
             OnVSyncChanged?.Invoke(QualitySettings.vSyncCount);
         }
 
         public void ChangeFullScreen(bool isFullScreen)
         {
-            if (_data.FullScreen  == isFullScreen) return;
-            _data.FullScreen = isFullScreen;
-            Screen.fullScreen = _data.FullScreen;
-            Screen.fullScreenMode = _data.FullScreen? FullScreenMode.FullScreenWindow : FullScreenMode.Windowed;
+            if (data.fullScreen  == isFullScreen) return;
+            data.fullScreen = isFullScreen;
+            Screen.fullScreen = data.fullScreen;
+            Screen.fullScreenMode = data.fullScreen? FullScreenMode.FullScreenWindow : FullScreenMode.Windowed;
             SaveData();
-            OnFullScreenChanged?.Invoke(_data.FullScreen);
+            OnFullScreenChanged?.Invoke(data.fullScreen);
         }
 
         public void ChangeVSync(int value)
         {
-            if (_data.VSync == value) return;
-            _data.VSync = value;
-            QualitySettings.vSyncCount=_data.VSync;
+            if (data.vSync == value) return;
+            data.vSync = value;
+            QualitySettings.vSyncCount=data.vSync;
             SaveData();
-             OnVSyncChanged?.Invoke(_data.VSync);
+             OnVSyncChanged?.Invoke(data.vSync);
         }
 
         public void ChangeFrameRate(int value)
         {
-            if (_data.FrameRate == value) return;
-            _data.FrameRate=value;
-            Application.targetFrameRate = _data.FrameRate;
+            if (data.frameRate == value) return;
+            Debug.Log(value);
+            data.frameRate=value;
+            Application.targetFrameRate = data.frameRate;
             SaveData();
-            OnFraneRateChanged?.Invoke(_data.FrameRate);
+            OnFraneRateChanged?.Invoke(data.frameRate);
         }
         
         public int GetFrameRate()
         {
-            return _data.FrameRate;
+            return data.frameRate;
         }
-        
+
+        public int GetQualityIndex()
+        {
+            return data.graphicsQuality;
+        }
         private void SaveData()
         {
-            PermanentData.Save(_data, nameof(Settings));
+            PermanentData.Save(data, nameof(Settings));
         }
         
         private void LoadData()
         {
-            _data = new SettingsData(initialVolume,Application.targetFrameRate, QualitySettings.GetQualityLevel(), QualitySettings.vSyncCount, Screen.fullScreen);
-            PermanentData.Load(_data, nameof(Settings));
+            PermanentData.Load(data, nameof(Settings));
         }
-
+[ContextMenu("CleanData")]
         public void CleanData()
         {
             PermanentData.Clean();
@@ -154,7 +161,7 @@ namespace FiremanTrial.Settings
 
         
     }
-    
+    [Serializable]
     public struct SettingsData 
     {
         public const float MinDb = -80f;
@@ -164,24 +171,13 @@ namespace FiremanTrial.Settings
         private const string MusicSoundKey = "MusicSound";
         private const  string FXSoundKey= "FXSound";
         // volume de cada perfil do audioMixer
-        public int MasterSoundVolume;
-        public int MusicSoundVolume;
-        public int FXSoundVolume;
-        public int FrameRate;
-        public int GraphicsQuality;
-        public int VSync;
-        public bool FullScreen;
-
-        public SettingsData(int initialVolume,int frameRate, int graphicsQuality,int vSync, bool fullScreen)
-        {
-            MasterSoundVolume = initialVolume;
-            MusicSoundVolume = initialVolume;
-            FXSoundVolume = initialVolume;
-            this.FrameRate = frameRate;
-            this.GraphicsQuality= graphicsQuality;
-            this.VSync = vSync;
-            this.FullScreen = fullScreen;
-        }
+        [Range(0,20)] public int masterSoundVolume;
+        [Range(0,20)] public int musicSoundVolume;
+        [Range(0,20)] public int fxSoundVolume;
+        public int frameRate;
+        public int graphicsQuality;
+        public int vSync;
+        public bool fullScreen;
 
         public static string VolumeKey(VolumeType volumeType)
         {

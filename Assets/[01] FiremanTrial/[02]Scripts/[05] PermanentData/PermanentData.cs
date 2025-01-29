@@ -11,7 +11,7 @@ namespace FiremanTrial
         public static void Save<T>(T obj, string relativePath) // → Transforma um objeto em json e salva no repositório.
         {
             string fullPath = Path.Combine(BasePath, relativePath);
-            string json = JsonUtility.ToJson(obj,true);
+            string json = JsonUtility.ToJson(obj);
             File.WriteAllText(fullPath, json);
         }
 
@@ -30,6 +30,7 @@ namespace FiremanTrial
                 return defaultObj;
             }
         }
+        
         public static void Clean()  // → Deleta a pasta base e a recria limpando todos os arquivos salvos
         {
 
