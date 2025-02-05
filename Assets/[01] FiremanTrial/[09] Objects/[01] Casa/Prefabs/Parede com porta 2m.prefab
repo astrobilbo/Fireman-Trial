@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 7825304733801753410}
   - component: {fileID: 2672012426329866478}
   - component: {fileID: 222710647507639215}
+  - component: {fileID: 6282101234085462427}
   m_Layer: 0
   m_Name: Parede Porta 2/2.5m
   m_TagString: Untagged
@@ -140,8 +141,29 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2, y: 0.4, z: 2.5000005}
-  m_Center: {x: -1, y: 0.10000001, z: 1.2500002}
+  m_Size: {x: 0.6431124, y: 0.4, z: 2.5000007}
+  m_Center: {x: -1.6784438, y: 0.100000024, z: 1.2500002}
+--- !u!65 &6282101234085462427
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6257952923822029331}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.57966757, y: 0.4, z: 2.5000007}
+  m_Center: {x: -0.28983375, y: 0.12845354, z: 1.2500002}
 --- !u!1001 &1260861207015887666
 PrefabInstance:
   m_ObjectHideFlags: 0

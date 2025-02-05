@@ -50,7 +50,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5390614471819007018, guid: e90c99131a0258840a0b48c41c6d32b6, type: 3}
       propertyPath: m_Name
-      value: Casa Variant
+      value: Casa Interativa
+      objectReference: {fileID: 0}
+    - target: {fileID: 8747917133779861734, guid: e90c99131a0258840a0b48c41c6d32b6, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8747917133779861734, guid: e90c99131a0258840a0b48c41c6d32b6, type: 3}
+      propertyPath: m_SpotAngle
+      value: 179
+      objectReference: {fileID: 0}
+    - target: {fileID: 8747917133779861734, guid: e90c99131a0258840a0b48c41c6d32b6, type: 3}
+      propertyPath: m_InnerSpotAngle
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 8747917133779861734, guid: e90c99131a0258840a0b48c41c6d32b6, type: 3}
+      propertyPath: m_BounceIntensity
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
