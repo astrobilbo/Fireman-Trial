@@ -72,3 +72,11 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 *.meta
 /Assets/\[01\] FiremanTrial/\[03\] Scenes/SampleScene
+ProjectSettings/ProjectSettings.asset
+Packages/packages-lock.json
+Packages/manifest.json
+Assets/Resources/PerformanceTestRunInfo.json
+Assets/\[51\] Joystick Pack/Scripts/Editor/JoystickEditor.asmdef
+Assets/\[51\] Joystick Pack/Scripts/Base/Joystick.cs
+Assets/\[51\] Joystick Pack/Prefabs/Dynamic Joystick.prefab
+Assets/\[51\] Joystick Pack/Joystick.asmdef

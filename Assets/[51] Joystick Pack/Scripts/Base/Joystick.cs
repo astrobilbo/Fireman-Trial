@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.EventSystems;
 
 namespace VirtualJoystick
@@ -6,20 +7,12 @@ namespace VirtualJoystick
 
     public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUpHandler
     {
-        public float Horizontal
-        {
-            get { return (snapX) ? SnapFloat(input.x, AxisOptions.Horizontal) : input.x; }
-        }
+        public Action<Vector2> DirectionChanged;
+        public float Horizontal => snapX ? SnapFloat(input.x, AxisOptions.Horizontal) : input.x;
 
-        public float Vertical
-        {
-            get { return (snapY) ? SnapFloat(input.y, AxisOptions.Vertical) : input.y; }
-        }
+        public float Vertical => snapY ? SnapFloat(input.y, AxisOptions.Vertical) : input.y;
 
-        public Vector2 Direction
-        {
-            get { return new Vector2(Horizontal, Vertical); }
-        }
+        public Vector2 Direction => new(Horizontal, Vertical);
 
         public float HandleRange
         {
@@ -110,7 +103,10 @@ namespace VirtualJoystick
                     input = normalised;
             }
             else
+            {
                 input = Vector2.zero;
+            }
+            DirectionChanged?.Invoke(Direction);
         }
 
         private void FormatInput()
@@ -161,6 +157,7 @@ namespace VirtualJoystick
         {
             input = Vector2.zero;
             handle.anchoredPosition = Vector2.zero;
+            DirectionChanged?.Invoke(Direction);
         }
 
         protected Vector2 ScreenPointToAnchoredPosition(Vector2 screenPosition)
