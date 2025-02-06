@@ -20,5 +20,21 @@ namespace FiremanTrial
         {
             CanvasGroupManager.Interactive(value, canvasGroup);
         }
+
+        public void ToggleVisibility()
+        {
+            var visible = Mathf.Approximately(canvasGroup.alpha, 1);
+            MakeVisible(!visible);
+        }
+        public void ToggleInteractive()
+        {
+            var interactable = canvasGroup.interactable;
+            MakeInteractive(!interactable);
+        }
+        public void ToggleVisibleAndInteractive()
+        {
+            var interactable = canvasGroup.interactable;
+            MakeVisibleAndInteractive(!interactable);
+        }
     }
 }
