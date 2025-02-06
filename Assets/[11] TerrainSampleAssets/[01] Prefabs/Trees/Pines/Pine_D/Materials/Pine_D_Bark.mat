@@ -45,7 +45,8 @@ Material:
   - _NORMALMAP
   - _OCCLUSIONMAP
   - _PARALLAXMAP
-  m_InvalidKeywords: []
+  m_InvalidKeywords:
+  - _WINDQUALITY_NONE
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 1
@@ -222,7 +223,7 @@ Material:
     - _TransparentSortPriority: 0
     - _TransparentWritingMotionVec: 0
     - _TransparentZWrite: 0
-    - _TwoSided: 2
+    - _TwoSided: 0
     - _UseShadowThreshold: 0
     - _WINDQUALITY: 0
     - _WIND_BRANCH1: 0
