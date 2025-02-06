@@ -1,0 +1,17 @@
+{
+    "name": "ExternalJoystickConverter",
+    "rootNamespace": "FiremanTrial.JoystickConverter",
+    "references": [
+        "GUID:c11976153efba2f4db5c8e189ea1d094",
+        "GUID:7ce00c2c219f8eb4fb7a54ed96e73ee8"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
