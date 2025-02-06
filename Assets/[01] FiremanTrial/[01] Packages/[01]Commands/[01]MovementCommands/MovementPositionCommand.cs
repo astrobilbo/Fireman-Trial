@@ -8,6 +8,6 @@ namespace FiremanTrial.Commands
         [SerializeField] private MovementPosition movement;
         [SerializeField] private MovementDirection direction;
 
-        public override void Execute() => movement.AddMovementInput(direction);
+        public override void Execute() => movement?.AddMovementInput(direction);
     }
 }

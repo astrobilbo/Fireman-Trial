@@ -7,6 +7,6 @@ namespace FiremanTrial.Commands
     {
         [SerializeField] private MovementRotation movement;
         
-        public override void Execute(float value) => movement.HandleRotationInput(value);
+        public override void Execute(float value) => movement?.HandleRotationInput(value);
     }
 }
