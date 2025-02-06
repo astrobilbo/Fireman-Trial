@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using LendasEMitos.Dialogue;
 
 namespace LendasEMitos.Dialogue
 {

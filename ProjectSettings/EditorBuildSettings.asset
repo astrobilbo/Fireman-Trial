@@ -8,10 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/[01] FiremanTrial/[03] Scenes/Menu inicial.unity
     guid: 2639db86184d21841a93ada77145a663
-  - enabled: 1
+  - enabled: 0
     path: Assets/[01] FiremanTrial/[03] Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 0
+  - enabled: 1
     path: "Assets/[01] FiremanTrial/[03] Scenes/Op\xE7\xF5es.unity"
     guid: 8f04168b933149e4188f0763ed0dd1fa
   - enabled: 0
