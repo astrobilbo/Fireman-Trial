@@ -1,0 +1,5 @@
+D:/Unity/Projects/Fireman Trial/.utmp/Debug/4h68jy5i/armeabi-v7a/CMakeFiles/edit_cache.dir
+D:/Unity/Projects/Fireman Trial/.utmp/Debug/4h68jy5i/armeabi-v7a/CMakeFiles/rebuild_cache.dir
+D:/Unity/Projects/Fireman Trial/.utmp/Debug/4h68jy5i/armeabi-v7a/GameActivity/CMakeFiles/game.dir
+D:/Unity/Projects/Fireman Trial/.utmp/Debug/4h68jy5i/armeabi-v7a/GameActivity/CMakeFiles/edit_cache.dir
+D:/Unity/Projects/Fireman Trial/.utmp/Debug/4h68jy5i/armeabi-v7a/GameActivity/CMakeFiles/rebuild_cache.dir
