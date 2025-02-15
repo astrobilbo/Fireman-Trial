@@ -1,0 +1,180 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8905046410561822494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcc7c4643be973949ae6ee7ba56548ec, type: 3}
+  m_Name: 05764096-5e77-4425-a1d4-868b93dc1085
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  characterSpeaking: 0
+  text: Sim
+  children:
+  - e39ef5b0-41dd-4d0b-9b69-f9c1ba3da6b8
+  rect:
+    serializedVersion: 2
+    x: 734
+    y: 20
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &-3767374801825719817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcc7c4643be973949ae6ee7ba56548ec, type: 3}
+  m_Name: 96934684-9467-4259-a476-06b09e57e57b
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  characterSpeaking: 1
+  text: "Ol\xE1 eu sou um dos desenvolvedores deste jogo e antes de voce poder jogar
+    eu gostaria de te explicar como o sistema de di\xE1logo funciona e como interagir
+    com ele. \nPara avan\xE7ar pelos dialogos voc\xEA deve clicar ou tocar na tela."
+  children:
+  - 9ec49a29-989a-4abe-90aa-c682daab159e
+  rect:
+    serializedVersion: 2
+    x: 23
+    y: 21
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &-3112850162157626553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcc7c4643be973949ae6ee7ba56548ec, type: 3}
+  m_Name: e39ef5b0-41dd-4d0b-9b69-f9c1ba3da6b8
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  characterSpeaking: 1
+  text: "Vamos para o jogo ent\xE3o"
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 935
+    y: 20
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &-1332457428443634760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcc7c4643be973949ae6ee7ba56548ec, type: 3}
+  m_Name: 94c9d45f-3bd0-4ea3-8338-8a42eafc2151
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  characterSpeaking: 1
+  text: "Durante o di\xE1logo surgir\xE3o op\xE7\xF5es de fala para o jogador ,o
+    jogador dever\xE1 clicar em uma das op\xE7\xF5es, entendeu?\r"
+  children:
+  - 05764096-5e77-4425-a1d4-868b93dc1085
+  - b7cb9b21-0447-4c5e-bd78-a5489484b9ab
+  rect:
+    serializedVersion: 2
+    x: 513
+    y: 28
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: SalaDeAula
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75ca589bf311ba84aa31cedded942b76, type: 3}
+  m_Name: Tutorial de uso do dialogue
+  m_EditorClassIdentifier: 
+  Characters:
+  - player
+  - desenvolvedor
+  defaultCharacterElement: 0
+  nodes:
+  - {fileID: -3767374801825719817}
+  - {fileID: 7512785576720381430}
+  - {fileID: -1332457428443634760}
+  - {fileID: -8905046410561822494}
+  - {fileID: 1198264327319508154}
+  - {fileID: -3112850162157626553}
+  newNodeOffset: {x: 200, y: 0}
+--- !u!114 &1198264327319508154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcc7c4643be973949ae6ee7ba56548ec, type: 3}
+  m_Name: b7cb9b21-0447-4c5e-bd78-a5489484b9ab
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  characterSpeaking: 0
+  text: "N\xE3o"
+  children:
+  - 96934684-9467-4259-a476-06b09e57e57b
+  rect:
+    serializedVersion: 2
+    x: 734
+    y: 137
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &7512785576720381430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcc7c4643be973949ae6ee7ba56548ec, type: 3}
+  m_Name: 9ec49a29-989a-4abe-90aa-c682daab159e
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  characterSpeaking: 1
+  text: "Para iniciar o dialogo com os personagens voc\xEA devera clicar neles e
+    sua conversa sera iniciada.\n"
+  children:
+  - 94c9d45f-3bd0-4ea3-8338-8a42eafc2151
+  rect:
+    serializedVersion: 2
+    x: 281
+    y: 18
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 

@@ -1,0 +1,97 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75ca589bf311ba84aa31cedded942b76, type: 3}
+  m_Name: Dialogo 2.2
+  m_EditorClassIdentifier: 
+  Characters:
+  - Player
+  - Esposa
+  defaultCharacterElement: 0
+  nodes:
+  - {fileID: 4878050574488157100}
+  - {fileID: 6842564354343186826}
+  - {fileID: 8736390516515154181}
+  newNodeOffset: {x: 200, y: 0}
+--- !u!114 &4878050574488157100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcc7c4643be973949ae6ee7ba56548ec, type: 3}
+  m_Name: ede07078-bce9-478f-a64c-85d50d1618ae
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  characterSpeaking: 1
+  text: Que barulho foi esse?
+  children:
+  - 388ccde1-c9b2-4af1-bb92-9f5f3632af74
+  rect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 200
+    height: 100
+  onEnterAction: Started
+  onExitAction: 
+--- !u!114 &6842564354343186826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcc7c4643be973949ae6ee7ba56548ec, type: 3}
+  m_Name: 388ccde1-c9b2-4af1-bb92-9f5f3632af74
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  characterSpeaking: 1
+  text: "Amor, o ar-condicionado parou, vai l\xE1 fora olhar o que aconteceu!\r"
+  children:
+  - 487433ad-2429-43da-aad6-a20de97c2d30
+  rect:
+    serializedVersion: 2
+    x: 200
+    y: -1
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &8736390516515154181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcc7c4643be973949ae6ee7ba56548ec, type: 3}
+  m_Name: 487433ad-2429-43da-aad6-a20de97c2d30
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  characterSpeaking: 0
+  text: "T\xE1 certo, m\xF4. Se afasta do ar-condicionado por seguran\xE7a."
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 400
+    y: -1
+    width: 200
+    height: 100
+  onEnterAction: Pass
+  onExitAction: 

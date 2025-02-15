@@ -1,0 +1,151 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-4764656855731610885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcc7c4643be973949ae6ee7ba56548ec, type: 3}
+  m_Name: 987b9e0c-32db-405a-92a8-60fb6d8dd15d
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  characterSpeaking: 1
+  text: "R\xE1pido, amor! Joga \xE1gua, qualquer coisa!"
+  children:
+  - fe9a5a4a-98c5-4c74-96ec-ac1410d491b4
+  rect:
+    serializedVersion: 2
+    x: 15
+    y: 9
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &-3647962312083808496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcc7c4643be973949ae6ee7ba56548ec, type: 3}
+  m_Name: fe9a5a4a-98c5-4c74-96ec-ac1410d491b4
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  characterSpeaking: 0
+  text: "Jogar \xE1gua causaria um desastre, isso s\xF3 espalharia o fogo! "
+  children:
+  - 9cd1e133-cad4-4ab5-89ad-492119165853
+  rect:
+    serializedVersion: 2
+    x: 215
+    y: 9
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &-1752065238103543902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcc7c4643be973949ae6ee7ba56548ec, type: 3}
+  m_Name: 560c2540-7846-42a2-ab04-a3bcf980a037
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  characterSpeaking: 1
+  text: "T\xE1 bem, mas tenha cuidado amor!\r"
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 824
+    y: 8
+    width: 200
+    height: 100
+  onEnterAction: Pass
+  onExitAction: Pass
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75ca589bf311ba84aa31cedded942b76, type: 3}
+  m_Name: Dialogue 2
+  m_EditorClassIdentifier: 
+  Characters:
+  - Player
+  - Esposa
+  defaultCharacterElement: 0
+  nodes:
+  - {fileID: -4764656855731610885}
+  - {fileID: -3647962312083808496}
+  - {fileID: 7544882230446750895}
+  - {fileID: 5691143802566520445}
+  - {fileID: -1752065238103543902}
+  newNodeOffset: {x: 200, y: 0}
+--- !u!114 &5691143802566520445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcc7c4643be973949ae6ee7ba56548ec, type: 3}
+  m_Name: 9b84a5a3-b51d-4e30-a32d-9521c1e633f4
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  characterSpeaking: 0
+  text: "O extintor certo seria de classe K, mas n\xE3o temos um aqui... Preciso
+    de um jeito alternativo!"
+  children:
+  - 560c2540-7846-42a2-ab04-a3bcf980a037
+  rect:
+    serializedVersion: 2
+    x: 615
+    y: 8
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &7544882230446750895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcc7c4643be973949ae6ee7ba56548ec, type: 3}
+  m_Name: 9cd1e133-cad4-4ab5-89ad-492119165853
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  characterSpeaking: 0
+  text: Amor! Chama os bombeiros enquanto eu tento pensar em uma forma de apagar
+    o fogo.
+  children:
+  - 9b84a5a3-b51d-4e30-a32d-9521c1e633f4
+  rect:
+    serializedVersion: 2
+    x: 415
+    y: 9
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 

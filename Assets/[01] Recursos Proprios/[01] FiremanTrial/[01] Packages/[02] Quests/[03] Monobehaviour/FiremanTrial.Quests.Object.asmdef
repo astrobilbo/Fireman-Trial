@@ -1,0 +1,21 @@
+{
+    "name": "FiremanTrial.Quests.Object",
+    "rootNamespace": "FiremanTrial.Quests",
+    "references": [
+        "GUID:c5e4f75ccfdea20418ad559421e608cb",
+        "GUID:7dbc9ea37f5351b44b6bfe66cb2b56ea",
+        "GUID:72c4e728434857d4cb48e72deb307ef9",
+        "GUID:b7f51212ed28b80419ac50287b17f30b",
+        "GUID:66e55af33c7cdaa43ae7de4c2ebbf2b7",
+        "GUID:d5f0b466792dcdb4bad23ec07d0bb6b7"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

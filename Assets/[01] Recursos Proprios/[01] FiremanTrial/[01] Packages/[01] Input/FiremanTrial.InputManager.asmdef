@@ -1,0 +1,14 @@
+{
+    "name": "FiremanTrial.InputManager",
+    "rootNamespace": "FiremanTrial.InputCommands",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

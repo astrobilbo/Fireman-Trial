@@ -1,0 +1,17 @@
+{
+    "name": "FiremanTrial.Object.Door",
+    "rootNamespace": "FiremanTrial.Door",
+    "references": [
+        "GUID:b7f51212ed28b80419ac50287b17f30b",
+        "GUID:60396c07834b846449bc67a626e94c70"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

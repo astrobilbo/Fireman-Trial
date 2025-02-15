@@ -1,0 +1,18 @@
+{
+    "name": "FiremanTrial.Cooktop",
+    "rootNamespace": "FiremanTrial.Cooktop",
+    "references": [
+        "GUID:b7f51212ed28b80419ac50287b17f30b",
+        "GUID:60396c07834b846449bc67a626e94c70",
+        "GUID:66e55af33c7cdaa43ae7de4c2ebbf2b7"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfc37973320a0964382f18d9ef914df5, type: 3}
+  m_Name: Quest 2
+  m_EditorClassIdentifier: 
+  requiredQuests:
+  - {fileID: 11400000, guid: d0f9acfbad7c33e4aa876f81dcb09078, type: 2}
+  steps:
+  - {fileID: 11400000, guid: de2a114779de1da4da0887b48b459819, type: 2}
+  - {fileID: 11400000, guid: 937abd34216a7c24bb314263a5b25db1, type: 2}
+  - {fileID: 11400000, guid: 487922b28c1842d4f8ee9cc4346ea915, type: 2}
+  - {fileID: 11400000, guid: 6d42404c96873424596e59b8e1ae5d41, type: 2}
+  - {fileID: 11400000, guid: d0c601441ee900345b6b906eed80bae6, type: 2}
+  - {fileID: 11400000, guid: aa2f04d03b538e44e917fad2a64b8b87, type: 2}
+  - {fileID: 11400000, guid: eddbcf0aae6b66944bc40716ec7da127, type: 2}
+  uiText:
+    title: Noite quente
+    info: "Os inc\xEAndios el\xE9tricos (classe C) est\xE3o relacionados a falhas
+      em equipamentos el\xE9tricos, como curto-circuitos e sobrecargas em aparelhos
+      como ar-condicionado e outros dispositivos eletr\xF4nicos.\\n\\nEm tais inc\xEAndios,
+      n\xE3o se deve utilizar \xE1gua, pois ela conduz eletricidade, aumentando o
+      risco de choque e podendo intensificar a propaga\xE7\xE3o das chamas.\\n\\nPara
+      esses casos, deve-se desligar imediatamente a fonte de energia. Em seguida,
+      recomenda-se o uso de um extintor de inc\xEAndio do tipo ABC, que \xE9 eficaz
+      contra inc\xEAndios el\xE9tricos."
+  soundsFeedback:
+    startClip: {fileID: 8300000, guid: 1011b321ca1b137429883195d5800bb4, type: 3}
+    completedClip: {fileID: 8300000, guid: e524242e89265bb4b8e1a00bac1642d5, type: 3}
+    loseClip: {fileID: 8300000, guid: 9faf80c51ca3a794fa4abd32ca9106e7, type: 3}
+    newStepClip: {fileID: 8300000, guid: 77144846adffafa42b3379446714e69c, type: 3}

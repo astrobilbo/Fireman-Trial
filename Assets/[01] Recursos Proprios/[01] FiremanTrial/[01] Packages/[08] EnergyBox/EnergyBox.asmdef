@@ -1,0 +1,17 @@
+{
+    "name": "EnergyBox",
+    "rootNamespace": "FiremanTrial.EnergyBox",
+    "references": [
+        "GUID:66e55af33c7cdaa43ae7de4c2ebbf2b7",
+        "GUID:b7f51212ed28b80419ac50287b17f30b"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

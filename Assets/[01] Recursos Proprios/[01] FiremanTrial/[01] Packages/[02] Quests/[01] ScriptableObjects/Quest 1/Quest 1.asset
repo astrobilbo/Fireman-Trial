@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfc37973320a0964382f18d9ef914df5, type: 3}
+  m_Name: Quest 1
+  m_EditorClassIdentifier: 
+  requiredQuests: []
+  steps:
+  - {fileID: 11400000, guid: 63fcf3965ad533945945de3162b72b62, type: 2}
+  - {fileID: 11400000, guid: e081fc87a1a918d4ab8084ec7398d5a4, type: 2}
+  - {fileID: 11400000, guid: 69b9b11555ecc8348afb862489eb54ea, type: 2}
+  - {fileID: 11400000, guid: 0bc92fad7409ee24bb916673994d576e, type: 2}
+  - {fileID: 11400000, guid: 6a22695b8ecc17747a3ab9d1b2a89f85, type: 2}
+  uiText:
+    title: Frigideira em chamas
+    info: "Os inc\xEAndios de classe K est\xE3o relacionados \xE0s gorduras animais
+      e vegetais.\\n\\nEm tais inc\xEAndios, n\xE3o se deve usar \xE1gua, pois ela
+      evapora instantaneamente, produzindo um g\xE1s que espalha o \xF3leo no ambiente
+      e pode causar uma explos\xE3o.\\n\\nPara esses casos, podemos utilizar um extintor
+      com uma solu\xE7\xE3o \xE0 base de pot\xE1ssio. Na aus\xEAncia de um extintor,
+      um m\xE9todo alternativo seria fechar o g\xE1s e aguardar. Para agilizar o
+      processo de extin\xE7\xE3o do fogo, jogar bicarbonato de s\xF3dio nas chamas
+      e tampar a frigideira com uma tampa s\xE3o medidas eficazes."
+  soundsFeedback:
+    startClip: {fileID: 8300000, guid: 1011b321ca1b137429883195d5800bb4, type: 3}
+    completedClip: {fileID: 8300000, guid: e524242e89265bb4b8e1a00bac1642d5, type: 3}
+    loseClip: {fileID: 8300000, guid: 9faf80c51ca3a794fa4abd32ca9106e7, type: 3}
+    newStepClip: {fileID: 8300000, guid: 77144846adffafa42b3379446714e69c, type: 3}
+  audioSource: {fileID: 0}

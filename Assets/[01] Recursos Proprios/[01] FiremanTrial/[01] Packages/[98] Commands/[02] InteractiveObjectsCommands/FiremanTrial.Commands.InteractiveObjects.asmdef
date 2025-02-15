@@ -1,0 +1,17 @@
+{
+    "name": "FiremanTrial.Commands.InteractiveObjects",
+    "rootNamespace": "FiremanTrial.Commands",
+    "references": [
+        "GUID:c11976153efba2f4db5c8e189ea1d094",
+        "GUID:b7f51212ed28b80419ac50287b17f30b"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

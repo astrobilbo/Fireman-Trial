@@ -1,0 +1,357 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-5967529082466077399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcc7c4643be973949ae6ee7ba56548ec, type: 3}
+  m_Name: fb17c121-1c0c-4dc0-bff6-e638d50846d5
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  characterSpeaking: 1
+  text: "Amor! Vem aqui r\xE1pido!"
+  children:
+  - 548026fd-e610-4b20-90a8-d49fd1970de7
+  - 50c1c57a-eb42-4e6e-8e2f-9a5fe66afcfc
+  - c48300db-264b-44e5-9e81-b66f94806eb7
+  rect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 200
+    height: 100
+  onEnterAction: Started
+  onExitAction: 
+--- !u!114 &-5032341290298127725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcc7c4643be973949ae6ee7ba56548ec, type: 3}
+  m_Name: 729c6b75-f124-402b-9418-9069bf561932
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  characterSpeaking: 0
+  text: Continuar ignorando
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 598
+    y: 443
+    width: 200
+    height: 100
+  onEnterAction: Lost
+  onExitAction: 
+--- !u!114 &-2523360632014830739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcc7c4643be973949ae6ee7ba56548ec, type: 3}
+  m_Name: e92b55f1-3b7b-48c3-9a6c-7bf63880af0b
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  characterSpeaking: 1
+  text: A frigideira pegou fogo! Vem logo!
+  children:
+  - ee04815b-b598-41dc-b462-6d5707f5cb33
+  rect:
+    serializedVersion: 2
+    x: 403
+    y: 111
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &-1893970908731005171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcc7c4643be973949ae6ee7ba56548ec, type: 3}
+  m_Name: 9f0d4e3e-5c89-4f0f-9b10-526492a794c5
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  characterSpeaking: 0
+  text: Estou indo!
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 610
+    y: 214
+    width: 200
+    height: 100
+  onEnterAction: Pass
+  onExitAction: 
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75ca589bf311ba84aa31cedded942b76, type: 3}
+  m_Name: Dialogue 1
+  m_EditorClassIdentifier: 
+  Characters:
+  - Player
+  - Esposa
+  defaultCharacterElement: 0
+  nodes:
+  - {fileID: -5967529082466077399}
+  - {fileID: 4328424722941690645}
+  - {fileID: 7990623672530676379}
+  - {fileID: 8250128157168969293}
+  - {fileID: -2523360632014830739}
+  - {fileID: 4700654249781870683}
+  - {fileID: 2361617462755689454}
+  - {fileID: -1893970908731005171}
+  - {fileID: 2596584678551470103}
+  - {fileID: 2286669763899820734}
+  - {fileID: 3685892567468456839}
+  - {fileID: 218093674423526007}
+  - {fileID: -5032341290298127725}
+  newNodeOffset: {x: 200, y: 0}
+--- !u!114 &218093674423526007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcc7c4643be973949ae6ee7ba56548ec, type: 3}
+  m_Name: e3a51b27-1578-4441-b819-464d264051ff
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  characterSpeaking: 0
+  text: Ja vou, deixa de ser exagerada!
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 1059
+    y: 416
+    width: 200
+    height: 100
+  onEnterAction: Lost
+  onExitAction: 
+--- !u!114 &2286669763899820734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcc7c4643be973949ae6ee7ba56548ec, type: 3}
+  m_Name: 3450a96c-3274-4686-8bd8-395155ecf89c
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  characterSpeaking: 1
+  text: "A cozinha est\xE1 pegando fogo!\r"
+  children:
+  - 1df87126-8575-41fa-a5b3-166331f5b8dd
+  - e3a51b27-1578-4441-b819-464d264051ff
+  rect:
+    serializedVersion: 2
+    x: 829
+    y: 330
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &2361617462755689454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcc7c4643be973949ae6ee7ba56548ec, type: 3}
+  m_Name: aa1c981d-3617-4960-a430-4f351856cd7c
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  characterSpeaking: 1
+  text: "Amor!!! Vem r\xE1pido!!\r"
+  children:
+  - 9f0d4e3e-5c89-4f0f-9b10-526492a794c5
+  - 2f74edf7-85d6-4e88-a571-b95650540699
+  - 729c6b75-f124-402b-9418-9069bf561932
+  rect:
+    serializedVersion: 2
+    x: 404
+    y: 220
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &2596584678551470103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcc7c4643be973949ae6ee7ba56548ec, type: 3}
+  m_Name: 2f74edf7-85d6-4e88-a571-b95650540699
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  characterSpeaking: 0
+  text: "O que voc\xEA quer?"
+  children:
+  - 3450a96c-3274-4686-8bd8-395155ecf89c
+  rect:
+    serializedVersion: 2
+    x: 603
+    y: 319
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &3685892567468456839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcc7c4643be973949ae6ee7ba56548ec, type: 3}
+  m_Name: 1df87126-8575-41fa-a5b3-166331f5b8dd
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  characterSpeaking: 0
+  text: Estou indo!
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 1051
+    y: 256
+    width: 200
+    height: 100
+  onEnterAction: Pass
+  onExitAction: 
+--- !u!114 &4328424722941690645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcc7c4643be973949ae6ee7ba56548ec, type: 3}
+  m_Name: 548026fd-e610-4b20-90a8-d49fd1970de7
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  characterSpeaking: 0
+  text: Estou indo!
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 210
+    y: 4
+    width: 200
+    height: 100
+  onEnterAction: Pass
+  onExitAction: 
+--- !u!114 &4700654249781870683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcc7c4643be973949ae6ee7ba56548ec, type: 3}
+  m_Name: ee04815b-b598-41dc-b462-6d5707f5cb33
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  characterSpeaking: 0
+  text: Estou indo!
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 616
+    y: 104
+    width: 200
+    height: 100
+  onEnterAction: Pass
+  onExitAction: 
+--- !u!114 &7990623672530676379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcc7c4643be973949ae6ee7ba56548ec, type: 3}
+  m_Name: 50c1c57a-eb42-4e6e-8e2f-9a5fe66afcfc
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  characterSpeaking: 0
+  text: O que foi, amor?
+  children:
+  - e92b55f1-3b7b-48c3-9a6c-7bf63880af0b
+  rect:
+    serializedVersion: 2
+    x: 203
+    y: 111
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &8250128157168969293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcc7c4643be973949ae6ee7ba56548ec, type: 3}
+  m_Name: c48300db-264b-44e5-9e81-b66f94806eb7
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  characterSpeaking: 0
+  text: Ignorar
+  children:
+  - aa1c981d-3617-4960-a430-4f351856cd7c
+  rect:
+    serializedVersion: 2
+    x: 200
+    y: 224
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 

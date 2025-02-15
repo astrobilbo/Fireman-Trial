@@ -1,0 +1,4 @@
+{
+	"name": "FiremanTrial.Commands.Movement",
+	"references":[ "GUID:c11976153efba2f4db5c8e189ea1d094", "GUID:4005165d1fa1fb64e8dd0c6db40b31d0" ]
+}

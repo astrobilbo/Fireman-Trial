@@ -1,0 +1,14 @@
+{
+    "name": "FiremanTrial.Movement",
+    "rootNamespace": "FiremanTrial.Movement",
+    "references": ["GUID:1743df1496cf9f448823471addc57a77"],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

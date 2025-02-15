@@ -1,0 +1,4 @@
+{
+	"name": "FiremanTrial.InputManager.Commands",
+	"references":[ "GUID:c11976153efba2f4db5c8e189ea1d094", "GUID:110ea62ca07fda14896952395f9e74f9" ]
+}

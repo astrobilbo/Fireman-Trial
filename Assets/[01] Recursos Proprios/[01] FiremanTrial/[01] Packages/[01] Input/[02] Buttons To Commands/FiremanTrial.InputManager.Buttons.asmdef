@@ -1,0 +1,17 @@
+{
+    "name": "FiremanTrial.InputManager.Buttons",
+    "rootNamespace": "FiremanTrial.InputManager",
+    "references": [
+        "GUID:b852d7fc729fd8b499d6303beebab049",
+        "GUID:c11976153efba2f4db5c8e189ea1d094"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

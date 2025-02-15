@@ -1,0 +1,16 @@
+{
+    "name": "FiremanTrial.Commands",
+    "rootNamespace": "FiremanTrial.Commands",
+    "references": [
+        "GUID:10838060a35de2649876853c1716e537"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
