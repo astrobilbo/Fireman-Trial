@@ -1,9 +1,7 @@
 {
     "name": "FiremanTrial.PhysicsInteraction",
     "rootNamespace": "FiremanTrial.PhysicsInteraction",
-    "references": [
-        "GUID:b7f51212ed28b80419ac50287b17f30b"
-    ],
+    "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

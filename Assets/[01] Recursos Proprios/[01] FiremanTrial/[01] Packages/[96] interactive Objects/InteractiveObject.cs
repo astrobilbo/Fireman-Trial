@@ -1,22 +1,24 @@
 using System;
 using System.Collections.Generic;
+using FiremanTrial.PhysicsInteraction;
 using UnityEngine;
 
 namespace FiremanTrial.InteraciveObjects
 {
-   public class InteractiveObject : MonoBehaviour
+   public class InteractiveObject : MonoBehaviour, IRayCastInteractalble, ISphereInteractable
    {
       public Action OnRangeAction;
       public Action OutRangeAction;
       public Action StartInteractionActions;
       public Action<bool> StartBoolInteractionActions;
       public Action EndInteractionAction;
+      
+      [SerializeField]private bool _externalLock;
+      [SerializeField,ColorUsage(hdr:true,showAlpha:true)] protected Color highlightColor = Color.yellow; 
 
       private bool _onRange;
       private bool wasInRangeWhenLock;
       private bool _isInteracting;
-      private bool _externalLock;
-      [SerializeField,ColorUsage(hdr:true,showAlpha:true)] protected Color highlightColor = Color.yellow; 
       private List<MeshRenderer> _meshRenderers;
       
       private void Awake()
@@ -40,6 +42,8 @@ namespace FiremanTrial.InteraciveObjects
          MeshRendererModifier.RemoveEmissionHighlight(_meshRenderers);
       }
 
+      public string Name() => name;
+
       public void InteractionOnView()
       {
          if (_isInteracting) return;
@@ -48,13 +52,16 @@ namespace FiremanTrial.InteraciveObjects
       public void StartInteraction()
       {
          StartInteractionActions?.Invoke();
+         Debug.Log("Start Interaction");
       }
       public void StartInteraction(bool interactionValue)
       {
+         Debug.Log("Start Interaction with bool");
          StartBoolInteractionActions?.Invoke(interactionValue);
       }
       public void EndInteraction()
       {
+         Debug.Log(" is interacting" + _isInteracting);
          _isInteracting = false;
          EndInteractionAction?.Invoke();
       }

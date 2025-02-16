@@ -1,26 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using FiremanTrial.InteraciveObjects;
 using UnityEngine;
 
 namespace FiremanTrial.PhysicsInteraction
 {
     public class OnObjectRange : SphereOverlap
     {
-        private List<InteractiveObject> _activeInteractiveObject= new List<InteractiveObject>();
-        private List<InteractiveObject> _oldInteractiveObject= new List<InteractiveObject>();
+        private List<ISphereInteractable> _activeInteractiveObject= new List<ISphereInteractable>();
+        private List<ISphereInteractable> _oldInteractiveObject= new List<ISphereInteractable>();
         protected override void BeforeLoopInteractions()
         {
             FindTargetObject = false;
-            _oldInteractiveObject = new List<InteractiveObject>(_activeInteractiveObject);
-            _activeInteractiveObject.Clear(); 
+            _oldInteractiveObject = new List<ISphereInteractable>(_activeInteractiveObject);
+            _activeInteractiveObject.Clear();
         }
 
         protected override bool FindTargetObjectsInRange(int i)
         {
-            if (!HitColliders[i].transform.TryGetComponent<InteractiveObject>(out var interactiveObject)) return false;
-            _activeInteractiveObject.Add(interactiveObject);
+            if (!HitColliders[i].transform.TryGetComponent<ISphereInteractable>(out var sphereInteractable)) return false;
+            _activeInteractiveObject.Add(sphereInteractable);
             return true;        
         }
 
@@ -32,21 +31,21 @@ namespace FiremanTrial.PhysicsInteraction
 
         private void ExecuteInteractions()
         {
-            foreach (var interactiveObject in _activeInteractiveObject.Where(interactiveObject =>
-                         !AlreadyCalledOnRange(interactiveObject)))
+            foreach (var sphereInteractable in _activeInteractiveObject.Where(sphereInteractable =>
+                         !AlreadyCalledOnRange(sphereInteractable)))
             {
-                interactiveObject.OnRange();
+                sphereInteractable.OnRange();
             }
             OnObjectPositionRange();
         }
 
-        private bool AlreadyCalledOnRange(InteractiveObject interactiveObject) => _oldInteractiveObject.Contains(interactiveObject);
+        private bool AlreadyCalledOnRange(ISphereInteractable sphereInteractable) => _oldInteractiveObject.Contains(sphereInteractable);
 
         private void EndOldInteractions()
         {
             if (OldInteractionObjectIsNullOrEmpty()) return;
             PrepareOutRangeList();
-            foreach (var interactiveObject in _oldInteractiveObject) interactiveObject.OutRange();
+            foreach (var sphereInteractable in _oldInteractiveObject) sphereInteractable.OutRange();
             _oldInteractiveObject.Clear();
         }
         

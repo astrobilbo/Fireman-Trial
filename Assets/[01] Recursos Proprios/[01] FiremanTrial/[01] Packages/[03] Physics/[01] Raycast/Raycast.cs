@@ -1,4 +1,3 @@
-using FiremanTrial.InteraciveObjects;
 using UnityEngine;
 
 namespace FiremanTrial.PhysicsInteraction
@@ -10,7 +9,7 @@ namespace FiremanTrial.PhysicsInteraction
         [SerializeField] private Vector3 targetPoint = new Vector3(0.5f, 0.5f, 0);
         private Camera _camera;
         private RaycastHit[] _raycastResults = new RaycastHit[10];
-        private InteractiveObject _activeInteractiveObject;
+        private IRayCastInteractalble _activeInteractiveObject;
 
         private void Awake() => InitializeDependencies();
 
@@ -48,11 +47,8 @@ namespace FiremanTrial.PhysicsInteraction
             for (var index = 0; index < hitCount; index++)
             {
                 var raycastHit = _raycastResults[index];
-
                 if (IsWall(raycastHit)) break;
-
-                if (!raycastHit.transform.TryGetComponent<InteractiveObject>(out var interactiveObject)) continue;
-                
+                if (!raycastHit.transform.TryGetComponent<IRayCastInteractalble>(out var interactiveObject)) continue;
                 HandleInteraction(interactiveObject);
                 return true;
             }
@@ -62,10 +58,9 @@ namespace FiremanTrial.PhysicsInteraction
         
         private bool IsWall(RaycastHit raycastHit) => raycastHit.transform.CompareTag("Wall");
 
-        private void HandleInteraction(InteractiveObject interactiveObject)
+        private void HandleInteraction(IRayCastInteractalble interactiveObject)
         {
-            if (_activeInteractiveObject != null && _activeInteractiveObject.name == interactiveObject.name) return;
-            
+            if (_activeInteractiveObject != null && _activeInteractiveObject.Name() == interactiveObject.Name()) return;
             EndCurrentInteraction();
             StartNewInteraction(interactiveObject);
         }
@@ -76,7 +71,7 @@ namespace FiremanTrial.PhysicsInteraction
             _activeInteractiveObject = null;
         }
         
-        private void StartNewInteraction(InteractiveObject interactiveObject)
+        private void StartNewInteraction(IRayCastInteractalble interactiveObject)
         {
             _activeInteractiveObject = interactiveObject;
             _activeInteractiveObject.InteractionOnView();

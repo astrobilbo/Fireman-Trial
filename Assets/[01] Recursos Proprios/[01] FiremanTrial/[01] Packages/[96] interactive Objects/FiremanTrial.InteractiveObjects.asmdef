@@ -1,4 +1,17 @@
 {
-	"name": "FiremanTrial.InteractiveObjects",
-	"references":[ "GUID:10838060a35de2649876853c1716e537" ]
+    "name": "FiremanTrial.InteractiveObjects",
+    "rootNamespace": "",
+    "references": [
+        "GUID:10838060a35de2649876853c1716e537",
+        "GUID:72c4e728434857d4cb48e72deb307ef9"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }
