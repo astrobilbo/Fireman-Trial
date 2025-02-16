@@ -1,0 +1,18 @@
+{
+    "name": "FiremanTrial.Pan",
+    "rootNamespace": "FiremanTrial.Pan",
+    "references": [
+        "GUID:c8eb0afcf0042434482ad09dc970469a",
+        "GUID:b7f51212ed28b80419ac50287b17f30b",
+        "GUID:66e55af33c7cdaa43ae7de4c2ebbf2b7"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

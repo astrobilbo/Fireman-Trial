@@ -1,0 +1,16 @@
+{
+    "name": "FiremanTrial.Extinguisher",
+    "rootNamespace": "FiremanTrial.Extinguisher",
+    "references": [
+        "GUID:c8eb0afcf0042434482ad09dc970469a"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

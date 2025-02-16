@@ -1,0 +1,16 @@
+{
+    "name": "FiremanTrial.Inventory",
+    "rootNamespace": "FiremanTrial.Inventory",
+    "references": [
+        "GUID:b7f51212ed28b80419ac50287b17f30b"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
