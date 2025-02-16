@@ -44,6 +44,7 @@ namespace LendasEMitos.Dialogue
         }
         public void Quit()
         {
+            if (!CurrentDialogue)return;
             CurrentDialogue = null;
             TriggerExitAction();
             currentNode = null;
