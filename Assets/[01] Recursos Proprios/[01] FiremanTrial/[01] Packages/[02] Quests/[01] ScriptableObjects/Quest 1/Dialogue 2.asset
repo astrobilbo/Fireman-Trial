@@ -23,7 +23,7 @@ MonoBehaviour:
     y: 9
     width: 200
     height: 100
-  onEnterAction: 
+  onEnterAction: Started
   onExitAction: 
 --- !u!114 &-3647962312083808496
 MonoBehaviour:
@@ -69,10 +69,10 @@ MonoBehaviour:
   rect:
     serializedVersion: 2
     x: 824
-    y: 8
+    y: 9
     width: 200
     height: 100
-  onEnterAction: Pass
+  onEnterAction: 
   onExitAction: Pass
 --- !u!114 &11400000
 MonoBehaviour:

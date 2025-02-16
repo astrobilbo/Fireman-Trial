@@ -42,6 +42,17 @@ namespace FiremanTrial.Fire
 
         private void StartFire(FireManager activeFire)
         {
+            if (_fireManager)
+            {
+                if (activeFire==_fireManager)
+                {
+                    Debug.Log("try subscriber multiple times");
+                }
+                else
+                {
+                    Debug.Log("active fire " +activeFire.name+ " try subscriber  while " + _fireManager.name + "is active");
+                }
+            }
             _fireManager = activeFire;
             Time();
             InvokeRepeating(nameof(UpdateText),0f,1f);
@@ -49,6 +60,8 @@ namespace FiremanTrial.Fire
 
         private void Time()
         {
+            if (_fireManager==null) return;
+            
             if (_fireManager.RateToWin())
             {
                 timeToFail=_fireManager.GetTimeToWin();

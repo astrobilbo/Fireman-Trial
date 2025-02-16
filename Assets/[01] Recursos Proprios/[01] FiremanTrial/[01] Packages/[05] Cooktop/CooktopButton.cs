@@ -2,13 +2,12 @@
 using FiremanTrial.InteraciveObjects;
 using FiremanTrial.ScriptAnimator;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace FiremanTrial.Object.Cooktop
 {
     public class CooktopButton : MonoBehaviour
     {
-        [SerializeField]  private RotateTransform rotateTransform;
+        [SerializeField] private RotateTransform rotateTransform;
         [SerializeField] private InteractiveObject interactiveObject;
         [SerializeField] private StoveBurn stoveBurn;
         [SerializeField] private bool isOpen = false;

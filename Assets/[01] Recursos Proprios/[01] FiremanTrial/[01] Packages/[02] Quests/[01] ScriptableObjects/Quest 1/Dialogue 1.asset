@@ -42,15 +42,40 @@ MonoBehaviour:
   isPlayerSpeaking: 1
   characterSpeaking: 0
   text: Continuar ignorando
-  children: []
+  children:
+  - 651b0a13-7ff4-4852-9921-f9c5c3cd398f
   rect:
     serializedVersion: 2
     x: 598
     y: 443
     width: 200
     height: 100
-  onEnterAction: Lost
+  onEnterAction: 
   onExitAction: 
+--- !u!114 &-4984733930552120889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcc7c4643be973949ae6ee7ba56548ec, type: 3}
+  m_Name: e18d0d70-a7f0-4b7f-85b6-661f41e9a2d0
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  characterSpeaking: 1
+  text: "vem rapido m\xF4."
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 409
+    y: 7
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: Pass
 --- !u!114 &-2523360632014830739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,14 +116,15 @@ MonoBehaviour:
   isPlayerSpeaking: 1
   characterSpeaking: 0
   text: Estou indo!
-  children: []
+  children:
+  - 1fab695c-3b14-4af8-96f0-5204b2ce0722
   rect:
     serializedVersion: 2
-    x: 610
+    x: 611
     y: 214
     width: 200
     height: 100
-  onEnterAction: Pass
+  onEnterAction: 
   onExitAction: 
 --- !u!114 &11400000
 MonoBehaviour:
@@ -130,6 +156,12 @@ MonoBehaviour:
   - {fileID: 3685892567468456839}
   - {fileID: 218093674423526007}
   - {fileID: -5032341290298127725}
+  - {fileID: -4984733930552120889}
+  - {fileID: 8406871564342001154}
+  - {fileID: 5004894127177182055}
+  - {fileID: 1542587295669678307}
+  - {fileID: 7319671857757191907}
+  - {fileID: 2014909240281519255}
   newNodeOffset: {x: 200, y: 0}
 --- !u!114 &218093674423526007
 MonoBehaviour:
@@ -145,16 +177,65 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 1
   characterSpeaking: 0
-  text: Ja vou, deixa de ser exagerada!
-  children: []
+  text: "Ja vou, deixa de fazer esc\xE1rnio!"
+  children:
+  - 7d16be31-97ba-4480-b896-d829430239da
   rect:
     serializedVersion: 2
-    x: 1059
+    x: 1060
     y: 416
     width: 200
     height: 100
-  onEnterAction: Lost
+  onEnterAction: 
   onExitAction: 
+--- !u!114 &1542587295669678307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcc7c4643be973949ae6ee7ba56548ec, type: 3}
+  m_Name: 2871f2fd-cf15-4e6e-82c4-e683817320b6
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  characterSpeaking: 1
+  text: Vem rapidoo!!!
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 1260
+    y: 251
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: Pass
+--- !u!114 &2014909240281519255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcc7c4643be973949ae6ee7ba56548ec, type: 3}
+  m_Name: 651b0a13-7ff4-4852-9921-f9c5c3cd398f
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  characterSpeaking: 1
+  text: "Chame os bombeiros!!! A cozinha est\xE1 pegando fogo!!!"
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 796
+    y: 443
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: Lost
 --- !u!114 &2286669763899820734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,8 +256,8 @@ MonoBehaviour:
   - e3a51b27-1578-4441-b819-464d264051ff
   rect:
     serializedVersion: 2
-    x: 829
-    y: 330
+    x: 824
+    y: 328
     width: 200
     height: 100
   onEnterAction: 
@@ -248,14 +329,15 @@ MonoBehaviour:
   isPlayerSpeaking: 1
   characterSpeaking: 0
   text: Estou indo!
-  children: []
+  children:
+  - 2871f2fd-cf15-4e6e-82c4-e683817320b6
   rect:
     serializedVersion: 2
-    x: 1051
-    y: 256
+    x: 1044
+    y: 260
     width: 200
     height: 100
-  onEnterAction: Pass
+  onEnterAction: 
   onExitAction: 
 --- !u!114 &4328424722941690645
 MonoBehaviour:
@@ -272,14 +354,15 @@ MonoBehaviour:
   isPlayerSpeaking: 1
   characterSpeaking: 0
   text: Estou indo!
-  children: []
+  children:
+  - e18d0d70-a7f0-4b7f-85b6-661f41e9a2d0
   rect:
     serializedVersion: 2
-    x: 210
-    y: 4
+    x: 205
+    y: 7
     width: 200
     height: 100
-  onEnterAction: Pass
+  onEnterAction: 
   onExitAction: 
 --- !u!114 &4700654249781870683
 MonoBehaviour:
@@ -296,15 +379,64 @@ MonoBehaviour:
   isPlayerSpeaking: 1
   characterSpeaking: 0
   text: Estou indo!
+  children:
+  - b81d2402-1313-4db0-88b7-f4181c33ff74
+  rect:
+    serializedVersion: 2
+    x: 608
+    y: 107
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &5004894127177182055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcc7c4643be973949ae6ee7ba56548ec, type: 3}
+  m_Name: 1fab695c-3b14-4af8-96f0-5204b2ce0722
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  characterSpeaking: 1
+  text: Vem rapidoo!!!
   children: []
   rect:
     serializedVersion: 2
-    x: 616
-    y: 104
+    x: 810
+    y: 215
     width: 200
     height: 100
-  onEnterAction: Pass
-  onExitAction: 
+  onEnterAction: 
+  onExitAction: Pass
+--- !u!114 &7319671857757191907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcc7c4643be973949ae6ee7ba56548ec, type: 3}
+  m_Name: 7d16be31-97ba-4480-b896-d829430239da
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  characterSpeaking: 1
+  text: "Chame os bombeiros!!! A cozinha est\xE1 pegando fogo!!!"
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 1259
+    y: 416
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: Lost
 --- !u!114 &7990623672530676379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -355,3 +487,27 @@ MonoBehaviour:
     height: 100
   onEnterAction: 
   onExitAction: 
+--- !u!114 &8406871564342001154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcc7c4643be973949ae6ee7ba56548ec, type: 3}
+  m_Name: b81d2402-1313-4db0-88b7-f4181c33ff74
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  characterSpeaking: 1
+  text: "Vem rapidoo m\xF4!!"
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 817
+    y: 107
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: Pass

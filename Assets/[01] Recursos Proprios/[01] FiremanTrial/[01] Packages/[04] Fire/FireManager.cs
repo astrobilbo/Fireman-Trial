@@ -21,14 +21,17 @@ namespace FiremanTrial.Fire
         private int currentFireRate;
         private float fireTimer;
         private bool playing;
+        private bool _isInteracting;
+        private bool _inIntercation;
 
         private void Update()
         {
             if (!playing)return;
             fireTimer += Time.deltaTime;
             var updateTime = RateToWin()? winUpdateTime : timeToUpdateFire;
-            if (!(fireTimer >= updateTime)) return;
+            if (updateTime > fireTimer) return;
             fireTimer = 0f;
+            Debug.Log(currentLevel);
             UpdateFire();
         }
 
@@ -51,11 +54,13 @@ namespace FiremanTrial.Fire
         
         public void ReduceFireRate (int level)
         {
+            Debug.Log("reduce "+level + " to " +currentLevel);
             currentFireRate -= level;
             fireLevelChanged?.Invoke();
         }
         public void IncreaseFireRate (int level)
         {
+            Debug.Log("increase "+ level + " to " +currentLevel);
             currentFireRate += level;
             fireLevelChanged?.Invoke();
         }
@@ -64,7 +69,6 @@ namespace FiremanTrial.Fire
         private void UpdateFire()
         {
             currentLevel += currentFireRate;
-            Debug.Log(currentLevel);
             if (currentLevel >= maxLevel)
             {
                 Fail();

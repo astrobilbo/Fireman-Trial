@@ -2,7 +2,8 @@
     "name": "FiremanTrial.Fire",
     "rootNamespace": "FiremanTrial.Fire",
     "references": [
-        "Unity.TextMeshPro"
+        "Unity.TextMeshPro",
+        "FiremanTrial.PhysicsInteraction"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

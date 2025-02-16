@@ -92,7 +92,7 @@ MonoBehaviour:
   rect:
     serializedVersion: 2
     x: 0
-    y: -1
+    y: -2
     width: 200
     height: 100
   onEnterAction: Started
@@ -115,8 +115,8 @@ MonoBehaviour:
   children: []
   rect:
     serializedVersion: 2
-    x: 610
-    y: -2
+    x: 609
+    y: -3
     width: 200
     height: 100
   onEnterAction: Pass
