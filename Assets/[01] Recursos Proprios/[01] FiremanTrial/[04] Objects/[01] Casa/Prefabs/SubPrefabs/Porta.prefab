@@ -333,7 +333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ca5d4be37bd2214f90a004159d232ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorSound: {fileID: 0}
+  doorSound: {fileID: 8300000, guid: c18962aa04f434745b8bdedb44bcbfba, type: 3}
   doorOpenAngle: {x: 0.18301272, y: -0.68301266, z: -0.68301266, w: -0.18301272}
   doorCloseAngle: {x: -0.49999997, y: -0.49999997, z: -0.49999997, w: 0.49999997}
   isOpen: 0

@@ -120,7 +120,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2373225587740026988}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2f9ab27e1c4d4df8bb47b70cc06b0af0, type: 3}
   m_Name: 
@@ -140,11 +140,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2373225587740026988}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8951e4d52b253c245906709127f7e52a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _externalLock: 1
   highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!82 &3547114324285028617
 AudioSource:
@@ -153,12 +154,12 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2373225587740026988}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -250,13 +251,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2373225587740026988}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 48abf5d5c44342f6b99f36af32f04f15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 50
-  threshold: 0.1
+  threshold: 0.5
 --- !u!1 &4581850382392177596
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,7 +365,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4259830565267675728
 Transform:
   m_ObjectHideFlags: 0
@@ -394,13 +395,13 @@ GameObject:
   - component: {fileID: 2419972582084566503}
   - component: {fileID: 2306327962674144181}
   - component: {fileID: 6187784323611301056}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: TriggerButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2419972582084566503
 Transform:
   m_ObjectHideFlags: 0

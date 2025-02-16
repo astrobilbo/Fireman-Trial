@@ -12417,6 +12417,30 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7442299869367768789, guid: 3a6a22ee6b47c544e972a9b75458de23, type: 3}
+      propertyPath: doorOpenAngle.w
+      value: 0.704416
+      objectReference: {fileID: 0}
+    - target: {fileID: 7442299869367768789, guid: 3a6a22ee6b47c544e972a9b75458de23, type: 3}
+      propertyPath: doorOpenAngle.x
+      value: -0.704416
+      objectReference: {fileID: 0}
+    - target: {fileID: 7442299869367768789, guid: 3a6a22ee6b47c544e972a9b75458de23, type: 3}
+      propertyPath: doorOpenAngle.y
+      value: -0.061628513
+      objectReference: {fileID: 0}
+    - target: {fileID: 7442299869367768789, guid: 3a6a22ee6b47c544e972a9b75458de23, type: 3}
+      propertyPath: doorOpenAngle.z
+      value: -0.061628513
+      objectReference: {fileID: 0}
+    - target: {fileID: 7442299869367768789, guid: 3a6a22ee6b47c544e972a9b75458de23, type: 3}
+      propertyPath: doorCloseAngle.w
+      value: -0.49999997
+      objectReference: {fileID: 0}
+    - target: {fileID: 7442299869367768789, guid: 3a6a22ee6b47c544e972a9b75458de23, type: 3}
+      propertyPath: doorCloseAngle.x
+      value: 0.49999997
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20521,18 +20545,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tampa
       objectReference: {fileID: 0}
-    - target: {fileID: 4374793878648229902, guid: cf7d4fdf0af80234cb14e4dd81cf153f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.7984
+    - target: {fileID: 1805464041693518869, guid: cf7d4fdf0af80234cb14e4dd81cf153f, type: 3}
+      propertyPath: _externalLock
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4374793878648229902, guid: cf7d4fdf0af80234cb14e4dd81cf153f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.034
-      objectReference: {fileID: 0}
-    - target: {fileID: 4374793878648229902, guid: cf7d4fdf0af80234cb14e4dd81cf153f, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.9947
-      objectReference: {fileID: 0}
+    - target: {fileID: 2131411886411447286, guid: cf7d4fdf0af80234cb14e4dd81cf153f, type: 3}
+      propertyPath: pan
+      value: 
+      objectReference: {fileID: 4081100385327901028}
     - target: {fileID: 4374793878648229902, guid: cf7d4fdf0af80234cb14e4dd81cf153f, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.64085644
@@ -24328,6 +24348,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 583fe3863dcc9a444b392634f030bba6, type: 3}
+--- !u!114 &4081100385327901028 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5651946875050451364, guid: 583fe3863dcc9a444b392634f030bba6, type: 3}
+  m_PrefabInstance: {fileID: 8560573857754187968}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80ab4e8fd81946aea3b73257cc8869f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &6405361146316741202 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3326241029365125778, guid: 583fe3863dcc9a444b392634f030bba6, type: 3}
