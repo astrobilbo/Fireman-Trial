@@ -809,6 +809,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1931712200}
+        m_TargetAssemblyTypeName: FiremanTrial.Quests.QuestsManagerInitializer, FiremanTrial.Quests.Object
+        m_MethodName: LoadAsNewGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1166344232}
         m_TargetAssemblyTypeName: FiremanTrial.SceneLoader, FiremanTrial
         m_MethodName: Async
@@ -1710,6 +1722,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 998495684}
+  - component: {fileID: 998495688}
   - component: {fileID: 998495687}
   - component: {fileID: 998495686}
   - component: {fileID: 998495685}
@@ -1719,7 +1732,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &998495684
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1735,10 +1748,10 @@ RectTransform:
   - {fileID: 310840808}
   m_Father: {fileID: 180586874}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 240, y: -216.3662}
-  m_SizeDelta: {x: 480, y: 110.9108}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &998495685
 MonoBehaviour:
@@ -1784,17 +1797,42 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 894669919}
-        m_TargetAssemblyTypeName: FiremanTrial.CanvasGroupManagerUGUI, FiremanTrial
-        m_MethodName: MakeVisibleAndInteractive
-        m_Mode: 6
+      - m_Target: {fileID: 1931712200}
+        m_TargetAssemblyTypeName: FiremanTrial.Quests.QuestsManagerInitializer, FiremanTrial.Quests.Object
+        m_MethodName: LoadQuestsManually
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 998495688}
+        m_TargetAssemblyTypeName: FiremanTrial.DialogueOverride.PlayerDataChanger,
+          FiremanTrial.DialogueOverride
+        m_MethodName: Load
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1166344232}
+        m_TargetAssemblyTypeName: FiremanTrial.SceneLoader, FiremanTrial
+        m_MethodName: Async
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &998495686
 MonoBehaviour:
@@ -1834,6 +1872,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 998495683}
   m_CullTransparentMesh: 1
+--- !u!114 &998495688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 998495683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dad8200900124f869202d44edc0312f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerData: {fileID: 11400000, guid: 9dbd0da99356d9c48a319353f2a1ffd4, type: 2}
 --- !u!1 &1166344229
 GameObject:
   m_ObjectHideFlags: 0
@@ -4171,6 +4222,64 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1911907088}
   m_CullTransparentMesh: 1
+--- !u!1 &1931712199
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1931712201}
+  - component: {fileID: 1931712200}
+  - component: {fileID: 1931712202}
+  m_Layer: 0
+  m_Name: QuestManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1931712200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931712199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56dccece2cfa4dcca3dc64519055393c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1931712201
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931712199}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 236.5, y: 133, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1931712202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931712199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c3f0fd0edbc8ac48bec88c386d6a615, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadGameObject: {fileID: 998495683}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -4178,3 +4287,4 @@ SceneRoots:
   - {fileID: 1387299559}
   - {fileID: 1360737005}
   - {fileID: 1726433327}
+  - {fileID: 1931712201}

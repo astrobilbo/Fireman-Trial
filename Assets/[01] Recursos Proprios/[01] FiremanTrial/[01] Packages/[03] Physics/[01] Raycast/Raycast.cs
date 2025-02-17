@@ -65,7 +65,7 @@ namespace FiremanTrial.PhysicsInteraction
             StartNewInteraction(interactiveObject);
         }
         
-        private void EndCurrentInteraction()
+        public void EndCurrentInteraction()
         {
             _activeInteractiveObject?.EndInteraction();
             _activeInteractiveObject = null;

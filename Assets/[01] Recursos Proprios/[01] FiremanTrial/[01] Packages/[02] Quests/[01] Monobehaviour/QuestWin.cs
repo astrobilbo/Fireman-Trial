@@ -1,9 +1,10 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
 namespace FiremanTrial.Quests
 {
-    public class QuestFail : MonoBehaviour
+    public class QuestWin : MonoBehaviour
     {
         [SerializeField] private Quest quest;
 
@@ -11,16 +12,17 @@ namespace FiremanTrial.Quests
 
         private void OnEnable()
         {
-            quest.Failed += Invoke;
+            quest.Completed += Invoke;
         }
 
         private void OnDisable()
         {
-            quest.Failed -= Invoke;
+            quest.Completed -= Invoke;
         }
 
         private void Invoke()
         {
+            Debug.Log(quest.name + ": win");
             actions?.Invoke();
         }
     }

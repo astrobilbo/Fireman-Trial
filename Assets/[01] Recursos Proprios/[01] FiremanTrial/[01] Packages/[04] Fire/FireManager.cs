@@ -22,7 +22,6 @@ namespace FiremanTrial.Fire
         private float fireTimer;
         private bool playing;
         private bool _isInteracting;
-        private bool _inIntercation;
 
         private void Update()
         {
@@ -31,7 +30,6 @@ namespace FiremanTrial.Fire
             var updateTime = RateToWin()? winUpdateTime : timeToUpdateFire;
             if (updateTime > fireTimer) return;
             fireTimer = 0f;
-            Debug.Log(currentLevel);
             UpdateFire();
         }
 
@@ -54,15 +52,17 @@ namespace FiremanTrial.Fire
         
         public void ReduceFireRate (int level)
         {
-            Debug.Log("reduce "+level + " to " +currentLevel);
             currentFireRate -= level;
             fireLevelChanged?.Invoke();
+            UpdateFire();
+            fireTimer = 0f;
         }
         public void IncreaseFireRate (int level)
         {
-            Debug.Log("increase "+ level + " to " +currentLevel);
             currentFireRate += level;
             fireLevelChanged?.Invoke();
+            UpdateFire();
+            fireTimer = 0f;
         }
 
         
@@ -87,7 +87,6 @@ namespace FiremanTrial.Fire
         private void Win()
         {
             fireParticles.Stop();
-            Debug.Log("Win");
             playing = false;
             FireExtinguisherSuccess?.Invoke();
         }
@@ -97,18 +96,17 @@ namespace FiremanTrial.Fire
         {
             if (!playing)return;
             fireParticles.Stop();
-            Debug.Log("Fail");
             playing=false;
             FireExtinguisherFail?.Invoke();
         }
 
         public float GetTimeToFail()
         {
-            return maxLevel*timeToUpdateFire-currentLevel*timeToUpdateFire;
+            return (maxLevel - currentLevel) / (float)currentFireRate * timeToUpdateFire;
         }
         public float GetTimeToWin()
         {
-            return currentLevel*winUpdateTime;
+            return (currentLevel) / Mathf.Abs(currentFireRate) * winUpdateTime;
         }
 
         public bool RateToWin()

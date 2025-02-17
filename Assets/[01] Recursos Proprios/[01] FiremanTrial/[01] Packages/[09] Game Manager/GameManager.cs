@@ -14,7 +14,6 @@ namespace FiremanTrial.Manager
             _gameState = newGameState;
             GameStateChanged?.Invoke(_gameState);
         }
-
         public static bool AlreadInState(GameState newGameState) => _gameState.Equals(newGameState);
 
         public static GameState GetGameState() => _gameState;
@@ -24,7 +23,6 @@ namespace FiremanTrial.Manager
     {
         MainMenu,
         Playing,
-        Pause,
-        Win
+        Pause
     }
 }

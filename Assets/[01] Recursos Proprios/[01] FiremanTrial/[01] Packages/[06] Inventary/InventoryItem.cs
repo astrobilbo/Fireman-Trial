@@ -8,16 +8,14 @@ namespace FiremanTrial.Inventory
         [SerializeField] protected InteractiveObject _interactiveObject;
         protected InventoryManager inventoryManager;
         protected bool _inInventory;
-        private Vector3 startPosition;
-        private Vector3 startRotation;
         private Transform placeHolder;
+        private Quaternion startRotation;
 
         private void Awake()
         {
             inventoryManager=FindAnyObjectByType<InventoryManager>();
-            startPosition = transform.position;
-            startRotation = transform.localEulerAngles;
             placeHolder = transform.parent;
+            startRotation = transform.rotation;
         }
 
         private void OnEnable() => SetObserver();
@@ -36,9 +34,10 @@ namespace FiremanTrial.Inventory
 
         public virtual void ReturnToInitialPosition()
         {
-            transform.parent = placeHolder;
-            transform.localEulerAngles = startRotation;
-            transform.localPosition = startPosition;
+            transform.transform.parent = (placeHolder);
+            transform.position = Vector3.zero;
+            transform.localPosition = Vector3.zero;
+            transform.rotation = startRotation;
             _inInventory = false;
             _interactiveObject.ExternalInteractionLock(false);
         }

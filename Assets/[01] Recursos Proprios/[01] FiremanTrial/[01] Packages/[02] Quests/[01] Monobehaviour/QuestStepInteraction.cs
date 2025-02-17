@@ -17,14 +17,20 @@ namespace FiremanTrial.Quests
         private void OnEnable()
         {
             if (interactiveObject != null) interactiveObject.StartInteractionActions += CompleteStep;
+            if (interactiveObject != null) interactiveObject.StartBoolInteractionActions += CompleteStep;
+
         }
 
         private void OnDisable()
         {
             if (interactiveObject != null) interactiveObject.StartInteractionActions -= CompleteStep;
+            if (interactiveObject != null) interactiveObject.StartBoolInteractionActions -= CompleteStep;
         }
-
         private void CompleteStep()
+        {
+            questStep?.Complete();
+        }
+        private void CompleteStep(bool ignore)
         {
             questStep?.Complete();
         }

@@ -1,5 +1,114 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2191808546130290634
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4629878334360497044}
+  - component: {fileID: 7495653351512719231}
+  - component: {fileID: 3849133482423769776}
+  - component: {fileID: 4137600122404931538}
+  m_Layer: 0
+  m_Name: Command
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4629878334360497044
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2191808546130290634}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8202153339901401516}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7495653351512719231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2191808546130290634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffd13e914382c644591c8f2d9204c166, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactiveObject: {fileID: 657153545843269724}
+--- !u!114 &3849133482423769776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2191808546130290634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8082ab371182d2408d927cbddcca54a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: 102
+  keyDown: {fileID: 0}
+  keyPressed: {fileID: 0}
+  keyUp: {fileID: 7495653351512719231}
+--- !u!114 &4137600122404931538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2191808546130290634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6dbbc88e2b0efc48aff6da2908902f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: 323
+  keyDown:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4330509456841916466}
+        m_TargetAssemblyTypeName: FiremanTrial.Extinguisher.FireExtinguisher, FiremanTrial.Extinguisher
+        m_MethodName: ActiveExtinguisher
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  keyPressed:
+    m_PersistentCalls:
+      m_Calls: []
+  keyUp:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4330509456841916466}
+        m_TargetAssemblyTypeName: FiremanTrial.Extinguisher.FireExtinguisher, FiremanTrial.Extinguisher
+        m_MethodName: DesactiveExtinguisher
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2447278619359024129
 GameObject:
   m_ObjectHideFlags: 0
@@ -13,7 +122,8 @@ GameObject:
   - component: {fileID: 657153545843269724}
   - component: {fileID: 8860353597428341275}
   - component: {fileID: 5866557367739248342}
-  m_Layer: 0
+  - component: {fileID: 1845027758280585019}
+  m_Layer: 3
   m_Name: ExtinguisherController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35,6 +145,7 @@ Transform:
   m_Children:
   - {fileID: 8235564486498697992}
   - {fileID: 699365274680006042}
+  - {fileID: 4629878334360497044}
   m_Father: {fileID: 4909518519438955492}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4330509456841916466
@@ -50,8 +161,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interactiveObject: {fileID: 657153545843269724}
-  _contentParticleSystem: {fileID: 5556843320597189711}
+  _ps: {fileID: 5556843320597189711}
   _audioSource: {fileID: 5866557367739248342}
+  _raycast: {fileID: 1845027758280585019}
 --- !u!114 &657153545843269724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,6 +296,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1845027758280585019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2447278619359024129}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c92a99f5411581741953a231eb0b1ac3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxDistanceToTakeObjects: 3
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  targetPoint: {x: 0.5, y: 0.5, z: 0}
 --- !u!1 &4215181480835456199
 GameObject:
   m_ObjectHideFlags: 0
@@ -290,7 +419,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -3803,7 +3932,7 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 1
+    enabled: 0
     serializedVersion: 4
     type: 1
     collisionMode: 0

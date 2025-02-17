@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace FiremanTrial.Quests
 {
@@ -19,15 +20,14 @@ namespace FiremanTrial.Quests
         private AudioSource _audioSource;
 
         private int _currentStep=0;
-        public bool AlreadyCompleted { get; private set; }
-        public bool IsAvailable() => requiredQuests == null || requiredQuests.TrueForAll(req =>  req.AlreadyCompleted);
+        public bool alreadyCompleted;
+        public bool IsAvailable() => requiredQuests == null || requiredQuests.TrueForAll(req =>  req.alreadyCompleted);
 
         private bool IsCompleted() =>  steps.TrueForAll(step => step.isCompleted);
 
         public void Initialize(AudioSource audioSource)
         {
             _audioSource=audioSource;
-            QuestsManager.AddQuest(this);
         }
         public void Start()
         {
@@ -71,8 +71,9 @@ namespace FiremanTrial.Quests
         public void Complete()
         {
             PlayOneShotClip(soundsFeedback?.completedClip);
-            AlreadyCompleted = true;
+            alreadyCompleted = true;
             Completed?.Invoke();
+            QuestsManager.SaveQuests();
             QuestsManager.FinishQuest();
         }
         
@@ -93,7 +94,6 @@ namespace FiremanTrial.Quests
         {
             if (!_audioSource || !soundsFeedback.startClip) return;
             _audioSource.PlayOneShot( clip);
-
         }
     }
 

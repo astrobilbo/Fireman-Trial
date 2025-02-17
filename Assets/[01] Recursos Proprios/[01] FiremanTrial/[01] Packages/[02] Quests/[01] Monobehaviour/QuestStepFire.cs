@@ -24,7 +24,6 @@ namespace FiremanTrial.Quests
 
         private void Completed()
         {
-            Debug.Log("Quest Completed");
             step.Complete();
             quest.Complete();
         }

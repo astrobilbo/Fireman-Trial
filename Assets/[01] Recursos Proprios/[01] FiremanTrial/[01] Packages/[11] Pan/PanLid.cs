@@ -18,6 +18,7 @@ namespace FiremanTrial.Pan
             transform.transform.parent = (target);
             transform.position = Vector3.zero;
             transform.localPosition = Vector3.zero;
+            transform.localRotation = Quaternion.identity;
         }
         
     }

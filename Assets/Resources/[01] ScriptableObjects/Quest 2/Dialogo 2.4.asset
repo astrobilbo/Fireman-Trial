@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-4764656855731610885
+--- !u!114 &-6243972116915430440
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,47 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dcc7c4643be973949ae6ee7ba56548ec, type: 3}
-  m_Name: 987b9e0c-32db-405a-92a8-60fb6d8dd15d
+  m_Name: 0e172fb7-4ca5-430b-9f83-e8c298a3fb6f
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 0
   characterSpeaking: 1
-  text: "R\xE1pido, amor! Joga \xE1gua, qualquer coisa!"
+  text: "Agora vai desligar os disjuntores da casa por seguran\xE7a!\r"
   children:
-  - fe9a5a4a-98c5-4c74-96ec-ac1410d491b4
+  - 257b31ab-63e7-4194-93d1-0376ad712f92
   rect:
     serializedVersion: 2
-    x: 15
-    y: 9
-    width: 200
-    height: 100
-  onEnterAction: Started
-  onExitAction: 
---- !u!114 &-3647962312083808496
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcc7c4643be973949ae6ee7ba56548ec, type: 3}
-  m_Name: fe9a5a4a-98c5-4c74-96ec-ac1410d491b4
-  m_EditorClassIdentifier: 
-  isPlayerSpeaking: 0
-  characterSpeaking: 0
-  text: "Jogar \xE1gua causaria um desastre, isso s\xF3 espalharia o fogo! "
-  children:
-  - 9cd1e133-cad4-4ab5-89ad-492119165853
-  rect:
-    serializedVersion: 2
-    x: 215
-    y: 9
+    x: 408
+    y: -5
     width: 200
     height: 100
   onEnterAction: 
   onExitAction: 
---- !u!114 &-1752065238103543902
+--- !u!114 &-3005042331905799536
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -60,20 +35,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dcc7c4643be973949ae6ee7ba56548ec, type: 3}
-  m_Name: 560c2540-7846-42a2-ab04-a3bcf980a037
+  m_Name: bfd5200b-2a3d-4d54-ab1f-c3b9ab92d17a
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 0
   characterSpeaking: 1
-  text: "T\xE1 bem, mas tenha cuidado amor!\r"
-  children: []
+  text: "T\xE1 vendo! Falei para contratar um t\xE9cnico."
+  children:
+  - 0e172fb7-4ca5-430b-9f83-e8c298a3fb6f
   rect:
     serializedVersion: 2
-    x: 824
-    y: 9
+    x: 205
+    y: -4
     width: 200
     height: 100
   onEnterAction: 
-  onExitAction: Pass
+  onExitAction: 
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84,20 +60,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 75ca589bf311ba84aa31cedded942b76, type: 3}
-  m_Name: Dialogue 2
+  m_Name: Dialogo 2.4
   m_EditorClassIdentifier: 
   Characters:
   - Player
   - Esposa
   defaultCharacterElement: 0
   nodes:
-  - {fileID: -4764656855731610885}
-  - {fileID: -3647962312083808496}
-  - {fileID: 7544882230446750895}
-  - {fileID: 5691143802566520445}
-  - {fileID: -1752065238103543902}
+  - {fileID: 4878050574488157100}
+  - {fileID: -3005042331905799536}
+  - {fileID: -6243972116915430440}
+  - {fileID: 8646537871182853131}
   newNodeOffset: {x: 200, y: 0}
---- !u!114 &5691143802566520445
+--- !u!114 &4878050574488157100
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -107,23 +82,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dcc7c4643be973949ae6ee7ba56548ec, type: 3}
-  m_Name: 9b84a5a3-b51d-4e30-a32d-9521c1e633f4
+  m_Name: ede07078-bce9-478f-a64c-85d50d1618ae
   m_EditorClassIdentifier: 
-  isPlayerSpeaking: 0
+  isPlayerSpeaking: 1
   characterSpeaking: 0
-  text: "O extintor certo seria de classe K, mas n\xE3o temos um aqui... Preciso
-    de um jeito alternativo!"
+  text: "Puts, e agora o ar-condicionado est\xE1 em chamas!\r"
   children:
-  - 560c2540-7846-42a2-ab04-a3bcf980a037
+  - bfd5200b-2a3d-4d54-ab1f-c3b9ab92d17a
   rect:
     serializedVersion: 2
-    x: 615
-    y: 8
+    x: 0
+    y: -2
     width: 200
     height: 100
-  onEnterAction: 
+  onEnterAction: Started
   onExitAction: 
---- !u!114 &7544882230446750895
+--- !u!114 &8646537871182853131
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -133,19 +107,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dcc7c4643be973949ae6ee7ba56548ec, type: 3}
-  m_Name: 9cd1e133-cad4-4ab5-89ad-492119165853
+  m_Name: 257b31ab-63e7-4194-93d1-0376ad712f92
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 0
-  characterSpeaking: 0
-  text: Amor! Chama os bombeiros enquanto eu tento pensar em uma forma de apagar
-    o fogo.
-  children:
-  - 9b84a5a3-b51d-4e30-a32d-9521c1e633f4
+  characterSpeaking: 1
+  text: Vou ligar para os bombeiros para pedir ajuda.
+  children: []
   rect:
     serializedVersion: 2
-    x: 415
-    y: 9
+    x: 609
+    y: -3
     width: 200
     height: 100
   onEnterAction: 
-  onExitAction: 
+  onExitAction: Pass

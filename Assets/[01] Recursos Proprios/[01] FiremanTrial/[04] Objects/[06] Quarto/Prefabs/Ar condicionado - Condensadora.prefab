@@ -4956,9 +4956,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startLevel: 5
-  maxLevel: 20
+  maxLevel: 30
   fireRate: 2
-  timeToUpdateFire: 20
+  timeToUpdateFire: 25
   fireParticles: {fileID: 8975660362669253071}
   particleRateMultiplier: 0.5
   winUpdateTime: 10

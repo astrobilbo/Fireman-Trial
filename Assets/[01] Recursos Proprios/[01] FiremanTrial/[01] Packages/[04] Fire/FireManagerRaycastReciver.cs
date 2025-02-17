@@ -16,12 +16,15 @@ namespace FiremanTrial.Fire
         {
             if (_isInteracting) return;
             _isInteracting = true;
+            Debug.Log("Interacting");
             fireManager.ReduceFireRate(reduceFlameRate);
         }
 
         public void EndInteraction()
         {
             if (!_isInteracting) return;
+            Debug.Log("End Interacting");
+            _isInteracting = false;
             fireManager.IncreaseFireRate(reduceFlameRate);
         }
     }

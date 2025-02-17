@@ -1,28 +1,36 @@
 ﻿using FiremanTrial.Inventory;
+using FiremanTrial.PhysicsInteraction;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace FiremanTrial.Extinguisher
 {
     public class FireExtinguisher : InventoryItem
     {
         
-        [SerializeField] private ParticleSystem _contentParticleSystem;
+        [SerializeField] private ParticleSystem _ps;
         [SerializeField] AudioSource _audioSource;
+        [SerializeField] Raycast _raycast;
         
-        private const float LoseCapacityPerSecond = 0.01f;
-        private const float TimeBetweenCheck = 1f;
-        private const float InteractionCooldownSeconds = 2f;
-    
-        private bool active = false;
-        private float interactionTimer = 0f;
-        private float _capacity = 100;
-        private float _timeSinceLastCheck = 1f;
-        private void Update()
+        public override void ReturnToInitialPosition()
+        {
+            base.ReturnToInitialPosition();
+            DesactiveExtinguisher();
+        }
+        
+        public void ActiveExtinguisher()
         {
             if(!_inInventory)return;
-            
+            _raycast.enabled = true;
+            _ps.Play();
         }
 
-        public string Name() => name;
+        public void DesactiveExtinguisher()
+        {
+            _raycast.EndCurrentInteraction();
+            _raycast.enabled = false;
+            _ps.Stop();
+        }
+        
     }
 }

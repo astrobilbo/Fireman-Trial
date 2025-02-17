@@ -2,7 +2,8 @@
     "name": "FiremanTrial.Quests",
     "rootNamespace": "FiremanTrial.Quests",
     "references": [
-        "GUID:10838060a35de2649876853c1716e537"
+        "GUID:10838060a35de2649876853c1716e537",
+        "GUID:1743df1496cf9f448823471addc57a77"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

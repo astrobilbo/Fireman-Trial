@@ -21,6 +21,7 @@ namespace FiremanTrial.Inventory
             _currentItem.transform.parent = holdPosition;
             _currentItem.transform.position = Vector3.zero;
             _currentItem.transform.localPosition = Vector3.zero;
+            _currentItem.transform.localRotation = Quaternion.identity;
         }
 
         public void ReturnToInitialPosition()

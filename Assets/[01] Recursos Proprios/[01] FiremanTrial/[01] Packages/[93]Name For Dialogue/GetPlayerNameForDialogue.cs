@@ -7,10 +7,10 @@ namespace FiremanTrial.DialogueOverride
 {
     public class GetPlayerNameForDialogue : MonoBehaviour
     {
-        [SerializeField] private string defaultPlayerName;
+        [SerializeField] private PlayerData playerData;
         [SerializeField] private TMP_InputField playerNameInputField;
         [SerializeField] private Button button;
-        private string _playerName;
+        [SerializeField] private PlayerDataChanger playerDataChanger;
         private Conversant _conversant;       
         private CanvasGroup _canvasGroup;
 
@@ -18,24 +18,32 @@ namespace FiremanTrial.DialogueOverride
         {
             _canvasGroup = GetComponent<CanvasGroup>();
             _conversant = FindAnyObjectByType<Conversant>();
+            if (playerData.isLoading)
+            {
+                CanvasGroupManager.VisibleAndInteractive(false, _canvasGroup);
+                _conversant?.ChangePlayerName(playerData.playerName);
+                return;
+            }
+           
             CanvasGroupManager.VisibleAndInteractive(true, _canvasGroup);
             if (playerNameInputField.placeholder is TextMeshProUGUI placeholderText)
             {
-                placeholderText.text = $"Default name: {defaultPlayerName}";
+                placeholderText.text = $"Default name: {playerData.playerName}";
             }
-            _playerName = defaultPlayerName;
             playerNameInputField.onValueChanged.AddListener(SetPlayerName);
             button.onClick.AddListener(ChangePlayerName);
         }
 
         private void SetPlayerName(string newPlayerName)
         {
-            _playerName = newPlayerName;
+            if (string.IsNullOrEmpty(newPlayerName)) return;
+            playerData.playerName = newPlayerName;
         }
 
         private void ChangePlayerName()
         {
-            _conversant?.ChangePlayerName(!string.IsNullOrEmpty(_playerName) ? _playerName : defaultPlayerName);
+            _conversant?.ChangePlayerName(playerData.playerName);
+            playerDataChanger.Save();
             CanvasGroupManager.VisibleAndInteractive(false, _canvasGroup);
         }
     }

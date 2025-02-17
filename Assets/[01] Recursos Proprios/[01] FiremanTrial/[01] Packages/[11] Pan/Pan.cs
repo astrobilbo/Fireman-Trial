@@ -54,9 +54,9 @@ namespace FiremanTrial.Pan
         public void RemoveLid()
         {
             if (!_activePanLid) return;
-            _activePanLid = null;
             interactiveObject.ExternalInteractionLock(true);
             _activePanLid.ReturnToInitialPosition();
+            _activePanLid = null;
             lidInPan=false;
         }
     }

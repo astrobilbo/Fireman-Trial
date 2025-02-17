@@ -15,14 +15,8 @@ namespace FiremanTrial.InputManager
             else Invoke(nameof(Action), secondsToWait);
         }
 
-        private void Action()
-        {
-            action?.Invoke();
-        }
+        private void Action() => action?.Invoke();
 
-        public void StopTimer()
-        {
-            CancelInvoke();
-        }
+        public void StopTimer() => CancelInvoke();
     }
 }

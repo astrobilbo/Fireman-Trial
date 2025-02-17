@@ -306,7 +306,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.8100002, y: 0.4, z: 2.0475004}
+  m_Size: {x: 0.8100002, y: 0.3, z: 2.0475004}
   m_Center: {x: -0.40500015, y: 0.00741594, z: -0.026250008}
 --- !u!114 &7158505532131479324
 MonoBehaviour:
@@ -320,6 +320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8951e4d52b253c245906709127f7e52a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _externalLock: 0
   highlightColor: {r: 1, g: 1, b: 0, a: 1}
 --- !u!114 &7647579675568647286
 MonoBehaviour:
