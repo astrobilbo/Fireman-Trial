@@ -3,12 +3,11 @@ using UnityEngine.UI;
 
 namespace FiremanTrial.Settings.UI
 {
-    public class AudioSettingsUGUI: MonoBehaviour
+    public class MouseSensibilitySettingsUGUI: MonoBehaviour
     {
         [SerializeField] private  Slider slider;
-        [SerializeField] private  VolumeType type;
-        private const int SliderMin = 0;
-        private const int SliderMax = 20;
+        private const int SliderMin = 10;
+        private const int SliderMax = 110;
 
         private float _volume;
         private Settings _settings;
@@ -22,12 +21,12 @@ namespace FiremanTrial.Settings.UI
             }
             SetSliderRange();
             slider.wholeNumbers = true;
-            slider.value = _settings.GetVolume(type);
-            slider.onValueChanged.AddListener(ChangeVolume);
-            _settings.OnVolumeChanged += ChangeSliderValue;
+            slider.value = _settings.GetSensibility();
+            slider.onValueChanged.AddListener(ChangeSensibility);
+            _settings.OnSensibilityChanged += ChangeSliderValue;
         }
         
-        private void OnDisable() => _settings.OnVolumeChanged -= ChangeSliderValue;
+        private void OnDisable() => _settings.OnSensibilityChanged -= ChangeSliderValue;
 
         private void SetSliderRange()
         {
@@ -35,18 +34,17 @@ namespace FiremanTrial.Settings.UI
             slider.maxValue= SliderMax;
         }
 
-        private void ChangeSliderValue(VolumeType key, int value)
+        private void ChangeSliderValue(int value)
         {
-            if (key != type || Mathf.Approximately(_volume, value)) return;
-            
+            if (Mathf.Approximately(_volume, value)) return;
             _volume = value;
             slider.value = _volume;
         }
 
-        private void ChangeVolume(float value)
+        private void ChangeSensibility(float value)
         {
             if (Mathf.Approximately(_volume, value)) return;
-            _settings.ChangeVolume(type, (int)value);
+            _settings.ChangeSensibility((int)value);
         }
     }
 }

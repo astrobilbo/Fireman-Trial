@@ -7,25 +7,27 @@ namespace FiremanTrial.Movement
 {
     public class MovementPosition : MonoBehaviour
     {
-        public event Action<Vector3> DirectionObserver;        
+        public event Action<Vector3> DirectionObserver;
         public event Action<bool> BooleanObserver;
-        
+
         [SerializeField] private float walkingspeed = 1;
         [SerializeField] private float runningspeed = 1.2f;
-        
+
         private CharacterController _characterController;
         private Vector3 _desiredDirection = Vector3.zero;
-        
+
         private bool _movementActive;
         private bool _canMove = true;
         private bool _running = false;
-        
-        private List<MovementDirection> _movingDirections = new List<MovementDirection>();
-        
-        private void Awake() => _characterController = GetComponent<CharacterController>();
 
-        private void FixedUpdate() => ApplyMovement();
-        
+        private List<MovementDirection> _movingDirections = new List<MovementDirection>();
+
+        private void Awake()
+        {
+            _characterController = GetComponent<CharacterController>();
+            MovementReactionToGameStateChange(GameManager.GetGameState());
+        }
+
         private void OnEnable() => GameManager.GameStateChanged += MovementReactionToGameStateChange;
 
         private void OnDisable() => GameManager.GameStateChanged -= MovementReactionToGameStateChange;
@@ -42,10 +44,11 @@ namespace FiremanTrial.Movement
                 StopMovement();
             }
         }
-        
+
+        private void FixedUpdate() => ApplyMovement();
         public void Run() => _running = !_running;
         private float Speed => _running ? runningspeed : walkingspeed;
-        
+
 
         public void AddMovementInput(MovementDirection direction)
         {
@@ -79,55 +82,55 @@ namespace FiremanTrial.Movement
         {
             if (!_canMove) return;
             if (!_movementActive) return;
-            
+
             var isStationary = CheckIfStationary();
             if (isStationary) return;
 
             var moveDirection = ComputeMovementVector();
             DirectionObserver?.Invoke(_desiredDirection);
-            
+
             _characterController.Move(moveDirection);
         }
-        
+
         private bool CheckIfStationary()
         {
             _movementActive = !(_desiredDirection == Vector3.zero &&
                                 _characterController.velocity == Vector3.zero);
-                if (!_movementActive)
-                {
-                    DirectionObserver?.Invoke(_desiredDirection);
-                    BooleanObserver?.Invoke(_movementActive);
-                }
-                return !_movementActive;
+            if (_movementActive) return !_movementActive;
+            DirectionObserver?.Invoke(_desiredDirection);
+            BooleanObserver?.Invoke(_movementActive);
+            return !_movementActive;
         }
 
         private Vector3 ComputeMovementVector()
         {
             var verticalDirection = _characterController.transform.TransformDirection(Vector3.forward);
             var horizontalDirection = _characterController.transform.TransformDirection(Vector3.right);
-            return CalculateMovement(horizontalDirection, verticalDirection) ;
+            return CalculateMovement(horizontalDirection, verticalDirection);
         }
-        
+
         private Vector3 CalculateMovement(Vector3 horizontal, Vector3 vertical)
         {
             var direction = (_desiredDirection.x * horizontal + _desiredDirection.z * vertical).normalized;
             var speedInFrame = (Speed * Time.fixedDeltaTime);
-            var result =   direction * speedInFrame;
+            var result = direction * speedInFrame;
             return result;
         }
 
         public void StopMovement()
         {
             if (!_canMove) return;
-            if (_movingDirections is null || _movingDirections.Count == 0) return;
-            var directions=new List<MovementDirection>(_movingDirections);
-            foreach (var activeMovingDirecion in directions)
+            if (_movingDirections is not null && _movingDirections.Count != 0)
             {
-                RemoveMovementInput(activeMovingDirecion);
+                var directions = new List<MovementDirection>(_movingDirections);
+                foreach (var activeMovingDirecion in directions)
+                {
+                    RemoveMovementInput(activeMovingDirecion);
+                }
             }
-
             ApplyMovement();
             _canMove = false;
+            
         }
 
         public void RestartMovement()
@@ -135,6 +138,7 @@ namespace FiremanTrial.Movement
             _canMove = true;
         }
     }
+
     public enum MovementDirection
     {
         Forward,
@@ -143,3 +147,4 @@ namespace FiremanTrial.Movement
         Right
     }
 }
+

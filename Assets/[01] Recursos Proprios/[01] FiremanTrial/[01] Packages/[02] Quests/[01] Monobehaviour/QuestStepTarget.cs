@@ -5,13 +5,13 @@ namespace FiremanTrial.Quests
     public class QuestStepTarget : MonoBehaviour
     {
         [SerializeField] private QuestSteps questStep;
-
-        private void Awake()
+        [SerializeField] private GameObject entryObject;
+        private void Start()
         {
             questStep.Started += Active;
             questStep.Completed += Disable;
             questStep.Failed += Disable;
-            gameObject.SetActive(false);
+            entryObject.SetActive(false);
         }
 
         private void OnDestroy()
@@ -28,12 +28,12 @@ namespace FiremanTrial.Quests
         
         private void Active()
         {
-            gameObject.SetActive(true);
+            entryObject.SetActive(true);
         }
 
         private void Disable()
         {
-            gameObject.SetActive(false);
+            entryObject.SetActive(false);
         }
     }
 }

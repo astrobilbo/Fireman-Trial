@@ -4,7 +4,7 @@ namespace FiremanTrial.Quests
 {
     public class QuestsManagerInitializer : MonoBehaviour
     {
-        private void Awake()
+        private void Start()
         {
             QuestsManager.Initialize();
         }

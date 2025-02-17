@@ -1,9 +1,9 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 
 namespace FiremanTrial.Quests
 {
-    public class QuestWin : MonoBehaviour
+    public class QuestStarted : MonoBehaviour
     {
         [SerializeField] private Quest quest;
 
@@ -11,12 +11,12 @@ namespace FiremanTrial.Quests
 
         private void OnEnable()
         {
-            quest.Completed += Invoke;
+            quest.Started += Invoke;
         }
 
         private void OnDisable()
         {
-            quest.Completed -= Invoke;
+            quest.Started -= Invoke;
         }
 
         private void Invoke()

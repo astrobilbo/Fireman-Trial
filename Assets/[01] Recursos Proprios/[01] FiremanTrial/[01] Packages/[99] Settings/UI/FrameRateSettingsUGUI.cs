@@ -10,7 +10,7 @@ namespace FiremanTrial.Settings.UI
         [SerializeField] private TMP_Dropdown frameRateDropdown;
         [SerializeField] private List<int> frameRates;
         private int _activeIndex;
-        private void Awake()
+        private void Start()
         {
             _settings = FindAnyObjectByType<Settings>();
             if (_settings == null)
@@ -32,10 +32,9 @@ namespace FiremanTrial.Settings.UI
             }
             frameRateDropdown.onValueChanged.AddListener(ChangeFrameRate);
             _settings.OnFraneRateChanged += RefreshDropdown;
+            RefreshDropdown(_settings.GetFrameRate());
         }
-
-        private void Start() => RefreshDropdown(_settings.GetFrameRate());
-
+        
         private void OnDisable() => _settings.OnFraneRateChanged -= RefreshDropdown;
 
         private void RefreshDropdown(int frameRate)

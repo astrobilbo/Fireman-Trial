@@ -9,7 +9,7 @@ namespace FiremanTrial.Settings.UI
 
         private Settings _settings;
 
-        private void Awake()
+        private void Start()
         {
             _settings = FindAnyObjectByType<Settings>();
             if (_settings == null)

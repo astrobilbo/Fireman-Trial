@@ -1,7 +1,10 @@
 {
     "name": "FiremanTrial.Movement",
     "rootNamespace": "FiremanTrial.Movement",
-    "references": ["GUID:1743df1496cf9f448823471addc57a77"],
+    "references": [
+        "GUID:1743df1496cf9f448823471addc57a77",
+        "GUID:70468ddbde349ac4bad4a42661fdcec7"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

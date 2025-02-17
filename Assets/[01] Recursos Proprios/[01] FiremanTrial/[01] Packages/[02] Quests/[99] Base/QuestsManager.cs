@@ -76,6 +76,7 @@ namespace FiremanTrial.Quests
 
         public static void FinishQuest()
         {
+            if (_activeQuest == null) return;
             Finished?.Invoke();
             if (Victory()&& !_alreadyShowWin)
             {

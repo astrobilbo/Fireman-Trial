@@ -6,7 +6,7 @@ namespace FiremanTrial
     public static class MeshRendererModifier
     {
         private static readonly int EmissionColor = Shader.PropertyToID("_EmissionColor");
-
+        private const string IgnoreTag = "IgnoreHighlight";
         public static List<MeshRenderer> GetAllMeshRenderers(GameObject root)
         {
             var meshRenderers = new List<MeshRenderer>();
@@ -16,8 +16,12 @@ namespace FiremanTrial
 
         private static void CollectMeshRenderers(Transform current, List<MeshRenderer> meshRenderers)
         {
-            var meshRenderer = current.GetComponent<MeshRenderer>();
-            if (meshRenderer != null) meshRenderers.Add(meshRenderer);
+            if (!current.CompareTag(IgnoreTag))
+            {
+                var meshRenderer = current.GetComponent<MeshRenderer>();
+                if (meshRenderer != null) meshRenderers.Add(meshRenderer);
+            }
+
             foreach (Transform child in current) CollectMeshRenderers(child, meshRenderers);
         }
 
@@ -54,6 +58,12 @@ namespace FiremanTrial
 
         public static void RemoveEmissionHighlight(List<MeshRenderer> meshRenderers)
         {
+            if (meshRenderers == null || meshRenderers.Count == 0)
+            {
+                Debug.LogWarning("RemoveEmissionHighlight: meshRenderers is null or empty.");
+                return;
+            }
+            
             foreach (var meshRenderer in meshRenderers)
             {
                 if (meshRenderer == null) continue;

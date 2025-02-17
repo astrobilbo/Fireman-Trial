@@ -2,7 +2,8 @@
     "name": "FiremanTrial.Extinguisher",
     "rootNamespace": "FiremanTrial.Extinguisher",
     "references": [
-        "GUID:c8eb0afcf0042434482ad09dc970469a"
+        "GUID:c8eb0afcf0042434482ad09dc970469a",
+        "GUID:72c4e728434857d4cb48e72deb307ef9"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

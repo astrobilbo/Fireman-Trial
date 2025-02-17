@@ -8,7 +8,7 @@ namespace FiremanTrial.Settings.UI
         private Settings _settings;
         [SerializeField] private TMP_Dropdown qualityDropdown;
         private int _activeIndex;
-        private void Awake()
+        private void Start()
         {
             _settings = FindAnyObjectByType<Settings>();
             if (_settings == null)
@@ -27,10 +27,6 @@ namespace FiremanTrial.Settings.UI
             
             qualityDropdown.onValueChanged.AddListener(ChangeQuality);
             _settings.OnGraphicsQualityChanged += RefreshDropdown;
-        }
-
-        private void Start()
-        {
             RefreshDropdown(_settings.GetQualityIndex());
         }
 

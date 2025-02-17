@@ -19,6 +19,7 @@ namespace FiremanTrial.Fire
 
         private int currentLevel;
         private int currentFireRate;
+        private float updateTime;
         private float fireTimer;
         private bool playing;
         private bool _isInteracting;
@@ -27,7 +28,7 @@ namespace FiremanTrial.Fire
         {
             if (!playing)return;
             fireTimer += Time.deltaTime;
-            var updateTime = RateToWin()? winUpdateTime : timeToUpdateFire;
+            updateTime = RateToWin()? winUpdateTime : timeToUpdateFire;
             if (updateTime > fireTimer) return;
             fireTimer = 0f;
             UpdateFire();
@@ -52,17 +53,28 @@ namespace FiremanTrial.Fire
         
         public void ReduceFireRate (int level)
         {
+            Debug.Log("reduced by: "+level);
             currentFireRate -= level;
             fireLevelChanged?.Invoke();
-            UpdateFire();
-            fireTimer = 0f;
+            if (RateToWin() && GetTimeToWin()>0)
+            {
+                updateTime = winUpdateTime;
+            }
+            else if (!RateToWin() && GetTimeToFail()>0)
+            {
+                updateTime = timeToUpdateFire;
+            }
+            else
+            {
+                UpdateFire();
+            }
         }
         public void IncreaseFireRate (int level)
         {
+            Debug.Log("increase by: "+level);
             currentFireRate += level;
             fireLevelChanged?.Invoke();
-            UpdateFire();
-            fireTimer = 0f;
+            updateTime = RateToWin()? winUpdateTime : timeToUpdateFire;
         }
 
         
@@ -86,6 +98,7 @@ namespace FiremanTrial.Fire
 
         private void Win()
         {
+            if (!playing)return;
             fireParticles.Stop();
             playing = false;
             FireExtinguisherSuccess?.Invoke();
@@ -102,11 +115,24 @@ namespace FiremanTrial.Fire
 
         public float GetTimeToFail()
         {
-            return (maxLevel - currentLevel) / (float)currentFireRate * timeToUpdateFire;
+            var value = (maxLevel - currentLevel) / (float)currentFireRate * timeToUpdateFire;
+            if (value < 0)
+            {
+                value = 0;
+            }
+
+            return value;
         }
+
         public float GetTimeToWin()
         {
-            return (currentLevel) / Mathf.Abs(currentFireRate) * winUpdateTime;
+            var value=(currentLevel) / Mathf.Abs(currentFireRate) * winUpdateTime;
+            if (value<0)
+            {
+                value=0;
+            }
+
+            return value;
         }
 
         public bool RateToWin()

@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 0
   characterSpeaking: 1
-  text: "Agora vai desligar os disjuntores da casa por seguran\xE7a!\r"
+  text: "Agora vai desligar os disjuntores da casa, no lado da porta na cozinha por
+    seguran\xE7a!\r"
   children:
   - 257b31ab-63e7-4194-93d1-0376ad712f92
   rect:

@@ -7,16 +7,14 @@ namespace FiremanTrial.InputManager
     public class TryExecuteAllInteractions : MonoBehaviour
     {
         private List<InteractiveObjectCommand> _interactiveObjectCommand;
-        private bool canExecute=true;
         
-        private void Awake()
+        private void Start()
         {
             _interactiveObjectCommand = new List<InteractiveObjectCommand>(FindObjectsByType<InteractiveObjectCommand>(FindObjectsSortMode.None));
         }
 
         public void ExecuteCommands()
         {
-            Debug.Log("Trying Execute Commands");
             for (var index = 0; index < _interactiveObjectCommand.Count; index++)
             {
                 var command = _interactiveObjectCommand[index];

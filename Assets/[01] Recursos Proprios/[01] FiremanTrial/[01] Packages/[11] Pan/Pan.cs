@@ -14,11 +14,10 @@ namespace FiremanTrial.Pan
         private InventoryManager inventoryManager;
         private PanLid _activePanLid;
         private bool lidInPan;
-        private void Awake()
+        private void Start()
         {
             inventoryManager=FindAnyObjectByType<InventoryManager>();
             _fireManager=GetComponent<FireManager>();
-            interactiveObject.ExternalInteractionLock(true);
         }
 
         private void OnEnable() => SetObserver();

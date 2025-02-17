@@ -4846,6 +4846,8 @@ GameObject:
   - component: {fileID: 6519862361587968978}
   - component: {fileID: 5640742241329143910}
   - component: {fileID: 8498213809343939844}
+  - component: {fileID: 4398109216638356797}
+  - component: {fileID: 7721657191389678182}
   m_Layer: 0
   m_Name: Ar condicionado - Condensadora
   m_TagString: Untagged
@@ -4956,9 +4958,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startLevel: 5
-  maxLevel: 30
+  maxLevel: 20
   fireRate: 2
-  timeToUpdateFire: 25
+  timeToUpdateFire: 45
   fireParticles: {fileID: 8975660362669253071}
   particleRateMultiplier: 0.5
   winUpdateTime: 10
+--- !u!114 &4398109216638356797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8206791777641967257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0976ec1a33c142b4a1cb11f038a04614, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireManager: {fileID: 8498213809343939844}
+  reduceFlameRate: 5
+--- !u!114 &7721657191389678182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8206791777641967257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5321dc507f624d741a14db59cd05c9c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fire: {fileID: 8498213809343939844}
+  step: {fileID: 11400000, guid: eddbcf0aae6b66944bc40716ec7da127, type: 2}
+  quest: {fileID: 11400000, guid: 5406500fa30be1a46b33c64f0c4ea6c3, type: 2}

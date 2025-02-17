@@ -11,7 +11,7 @@ namespace FiremanTrial.Inventory
         private Transform placeHolder;
         private Quaternion startRotation;
 
-        private void Awake()
+        private void Start()
         {
             inventoryManager=FindAnyObjectByType<InventoryManager>();
             placeHolder = transform.parent;

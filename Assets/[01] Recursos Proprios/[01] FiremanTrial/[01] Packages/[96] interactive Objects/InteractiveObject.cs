@@ -9,6 +9,7 @@ namespace FiremanTrial.InteraciveObjects
    {
       public Action OnRangeAction;
       public Action OutRangeAction;
+      public Action OnViewEnterAction;
       public Action StartInteractionActions;
       public Action<bool> StartBoolInteractionActions;
       public Action EndInteractionAction;
@@ -18,10 +19,11 @@ namespace FiremanTrial.InteraciveObjects
 
       private bool _onRange;
       private bool wasInRangeWhenLock;
+      private bool wasInViewWhenLock;
       private bool _isInteracting;
       private List<MeshRenderer> _meshRenderers;
       
-      private void Awake()
+      private void Start()
       {
          _meshRenderers = MeshRendererModifier.GetAllMeshRenderers(gameObject);
       }
@@ -48,20 +50,22 @@ namespace FiremanTrial.InteraciveObjects
       {
          if (_isInteracting) return;
          _isInteracting = true;
+         if (_externalLock) return;
+         OnViewEnterAction?.Invoke();
       }
       public void StartInteraction()
       {
          StartInteractionActions?.Invoke();
-         Debug.Log("Start Interaction");
+         if(_onRange) MeshRendererModifier.RemoveEmissionHighlight(_meshRenderers);
       }
       public void StartInteraction(bool interactionValue)
       {
-         Debug.Log("Start Interaction with bool");
          StartBoolInteractionActions?.Invoke(interactionValue);
+         if(_onRange) MeshRendererModifier.RemoveEmissionHighlight(_meshRenderers);
       }
       public void EndInteraction()
       {
-         Debug.Log(" is interacting" + _isInteracting);
+         if(!_isInteracting) return;
          _isInteracting = false;
          EndInteractionAction?.Invoke();
       }
@@ -75,9 +79,16 @@ namespace FiremanTrial.InteraciveObjects
             OutRange();
             wasInRangeWhenLock = true;
          }
+
+         if (_isInteracting && locked)
+         {
+            EndInteraction();
+            wasInViewWhenLock = true;
+         }
+         
          _externalLock = locked;
-         if ((!wasInRangeWhenLock && !_onRange) || locked) return;
-         OnRange();
+         if ((wasInRangeWhenLock || _onRange) && !locked) OnRange();
+         if ((wasInViewWhenLock && _isInteracting) || locked) InteractionOnView();
       }
    }
 }

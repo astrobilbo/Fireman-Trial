@@ -113,7 +113,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.22
+  near clip plane: 0.25
   far clip plane: 200
   field of view: 60
   orthographic: 0
@@ -121,7 +121,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 447
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -257,7 +257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c92a99f5411581741953a231eb0b1ac3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDistanceToTakeObjects: 1.5
+  maxDistanceToTakeObjects: 1.4
   layerMask:
     serializedVersion: 2
     m_Bits: 136
@@ -274,7 +274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27845b35fff04944a73a32c13029f14b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sphereRange: 1.5
+  sphereRange: 1.4
   layerMask:
     serializedVersion: 2
     m_Bits: 8
@@ -302,8 +302,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbbe5bc420de3af45bbefddf7de54f12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkingspeed: 1
-  runningspeed: 1.5
+  walkingspeed: 2
+  runningspeed: 3
 --- !u!114 &3429559203716867956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -317,6 +317,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 10
+  settings: {fileID: 0}
 --- !u!114 &6093943482188142886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -332,6 +333,7 @@ MonoBehaviour:
   rotationSpeed: 10
   verticalRotationLimitMax: 60
   verticalRotationLimitMin: -44
+  settings: {fileID: 0}
 --- !u!114 &2494198527638215082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1068,7 +1070,7 @@ GameObject:
   m_Layer: 6
   m_Name: HoldPosition
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1081,12 +1083,12 @@ Transform:
   m_GameObject: {fileID: 6205364185023832345}
   serializedVersion: 2
   m_LocalRotation: {x: 0.04999055, y: -0.5713937, z: 0.816035, w: 0.071393915}
-  m_LocalPosition: {x: -0.15, y: 1.3, z: 0.6}
+  m_LocalPosition: {x: -0.18, y: 1.236, z: 0.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6846065276145409818}
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 150}
+  m_LocalEulerAnglesHint: {x: 70, y: 0, z: 170}
 --- !u!1 &7032073032806202263
 GameObject:
   m_ObjectHideFlags: 0
@@ -1174,6 +1176,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8445109637890093122}
+  - component: {fileID: 2477167254674533562}
+  - component: {fileID: 7816604160870387966}
+  - component: {fileID: 5877592282925973182}
+  - component: {fileID: 7162605512615936433}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1197,6 +1203,118 @@ Transform:
   - {fileID: 6846065276145409818}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2477167254674533562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7154150054411537872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c4a9a4e63760c843be2056105a5fc70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quest: {fileID: 11400000, guid: d0f9acfbad7c33e4aa876f81dcb09078, type: 2}
+  actions:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8680989732648155668}
+        m_TargetAssemblyTypeName: FiremanTrial.Inventory.InventoryManager, FiremanTrial.Inventory
+        m_MethodName: ReturnToInitialPosition
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7816604160870387966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7154150054411537872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4dcf9b632d575a4aab81c71c9d88765, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quest: {fileID: 11400000, guid: d0f9acfbad7c33e4aa876f81dcb09078, type: 2}
+  actions:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8680989732648155668}
+        m_TargetAssemblyTypeName: FiremanTrial.Inventory.InventoryManager, FiremanTrial.Inventory
+        m_MethodName: ReturnToInitialPosition
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5877592282925973182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7154150054411537872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c4a9a4e63760c843be2056105a5fc70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quest: {fileID: 11400000, guid: 5406500fa30be1a46b33c64f0c4ea6c3, type: 2}
+  actions:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8680989732648155668}
+        m_TargetAssemblyTypeName: FiremanTrial.Inventory.InventoryManager, FiremanTrial.Inventory
+        m_MethodName: ReturnToInitialPosition
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7162605512615936433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7154150054411537872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4dcf9b632d575a4aab81c71c9d88765, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quest: {fileID: 11400000, guid: 5406500fa30be1a46b33c64f0c4ea6c3, type: 2}
+  actions:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8680989732648155668}
+        m_TargetAssemblyTypeName: FiremanTrial.Inventory.InventoryManager, FiremanTrial.Inventory
+        m_MethodName: ReturnToInitialPosition
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7371736405692941817
 GameObject:
   m_ObjectHideFlags: 0
@@ -1405,7 +1523,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -9200210366883936642, guid: 22994152a7e19a2459b751120259b353, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -9200210366883936642, guid: 22994152a7e19a2459b751120259b353, type: 3}
       propertyPath: m_TagString
@@ -1585,7 +1703,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2496332547428783936, guid: 22994152a7e19a2459b751120259b353, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -2496332547428783936, guid: 22994152a7e19a2459b751120259b353, type: 3}
       propertyPath: m_TagString
@@ -1773,7 +1891,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6657560127643677590, guid: 22994152a7e19a2459b751120259b353, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6657560127643677590, guid: 22994152a7e19a2459b751120259b353, type: 3}
       propertyPath: m_TagString
@@ -1830,8 +1948,8 @@ Animator:
   m_GameObject: {fileID: 5876101079777354191}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 22994152a7e19a2459b751120259b353, type: 3}
-  m_Controller: {fileID: 9100000, guid: f9012d0a3958e7b458781d7dc723c8d8, type: 2}
-  m_CullingMode: 0
+  m_Controller: {fileID: 9100000, guid: 9a6ddaa360d8ccb488ae36ec4f6dbdf1, type: 2}
+  m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0

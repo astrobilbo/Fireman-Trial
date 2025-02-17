@@ -6,13 +6,9 @@ namespace FiremanTrial.Manager
     {
         [SerializeField]private GameState lastGameState;
         [SerializeField]private bool loadingScene = true;
-        private void Awake()
-        {
-            lastGameState = GameManager.GetGameState();
-        }
-
         private void Start()
         {
+            lastGameState = GameManager.GetGameState();
             loadingScene = false;
         }
 

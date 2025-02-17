@@ -1,4 +1,5 @@
 
+using FiremanTrial.Manager;
 using UnityEngine;
 
 namespace FiremanTrial
@@ -6,11 +7,6 @@ namespace FiremanTrial
     public class LockMouse : MonoBehaviour
     {
         private bool lockState;
-
-        private void Awake()
-        {
-            lockState = Cursor.visible;
-        }
 
         public void Lock(bool value)
         {
@@ -20,14 +16,14 @@ namespace FiremanTrial
 
         public void Toggle()
         {
-            lockState=!lockState;
-            UpdateCursorState();
+            Lock(!lockState);
         }
 
         private void UpdateCursorState()
         {
-            Cursor.lockState = lockState ? CursorLockMode.Locked : CursorLockMode.None;
+            Cursor.lockState = lockState ? CursorLockMode.Locked : CursorLockMode.Confined;
             Cursor.visible = !lockState;
+            GameManager.SetGameState(lockState? GameState.Playing : GameState.Pause );
         }
     }
 }

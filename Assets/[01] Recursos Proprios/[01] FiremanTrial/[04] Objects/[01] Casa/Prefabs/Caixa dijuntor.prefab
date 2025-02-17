@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3982858137261286552}
   - component: {fileID: 749865065006562458}
   - component: {fileID: 6208243310929499059}
+  - component: {fileID: 7791263063024943802}
   m_Layer: 3
   m_Name: Caixa dijuntor
   m_TagString: Untagged
@@ -109,8 +110,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.3422232, y: 1, z: 1.9582198}
+  m_Center: {x: -0.17111151, y: 0, z: -0.47910985}
 --- !u!114 &749865065006562458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,6 +142,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _externalLock: 1
   highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+--- !u!114 &7791263063024943802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 50716516676188592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 310278a11ef2d1a43a5d3b4d33ac846f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactiveObject: {fileID: 6208243310929499059}
+  questStep: {fileID: 11400000, guid: c67d659525c949f428505e6b38de4c9c, type: 2}
 --- !u!1 &1128261919700659049
 GameObject:
   m_ObjectHideFlags: 0

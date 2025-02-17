@@ -12,17 +12,18 @@ namespace FiremanTrial.Quests
         
         public Action Started;
         public Action Failed;
-        public Action Completed;    
+        public Action Completed;   
         
         public void Start()
         {
+            if (active) return; 
             active = true;
             Started?.Invoke();
         }
 
         public void Complete()
         {
-            if (!active) return;
+            if (!active || isCompleted) return;
             
             active = false;
             isCompleted = true;
@@ -31,10 +32,9 @@ namespace FiremanTrial.Quests
 
         public void Fail()
         {
-            if (!active) return;
-            if (isCompleted) return;
-            Failed?.Invoke();
+            if (!active || isCompleted) return;
             active = false;
+            Failed?.Invoke();
         }
 
     }

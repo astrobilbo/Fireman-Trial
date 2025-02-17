@@ -9,7 +9,7 @@ namespace FiremanTrial.Quests
         [SerializeField] private AudioSource audioSource;
         [SerializeField] private GameObject questInitializer;
         [SerializeField] private UnityEvent onQuestInitialized;
-        private void Awake()
+        private void Start()
         {
             quest.Initialize(audioSource);
             questInitializer.SetActive(quest.IsAvailable());

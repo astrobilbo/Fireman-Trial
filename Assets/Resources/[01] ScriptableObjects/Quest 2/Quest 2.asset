@@ -35,6 +35,7 @@ MonoBehaviour:
       contra inc\xEAndios el\xE9tricos."
   soundsFeedback:
     startClip: {fileID: 8300000, guid: 1011b321ca1b137429883195d5800bb4, type: 3}
-    completedClip: {fileID: 8300000, guid: e524242e89265bb4b8e1a00bac1642d5, type: 3}
+    completedClip: {fileID: 8300000, guid: 63750620f3b4b554cadb8d3e6e086638, type: 3}
     loseClip: {fileID: 8300000, guid: 9faf80c51ca3a794fa4abd32ca9106e7, type: 3}
     newStepClip: {fileID: 8300000, guid: 77144846adffafa42b3379446714e69c, type: 3}
+  alreadyCompleted: 0

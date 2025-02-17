@@ -10,13 +10,10 @@ namespace FiremanTrial.Fire
         private List<FireManager> _fires;
         private FireManager _fireManager;
         private float timeToFail;
-        private void Awake()
+
+        private void Start()
         {
             _fires = new List<FireManager>(FindObjectsByType<FireManager>(FindObjectsSortMode.None));
-        }
-
-        private void OnEnable()
-        {
             foreach (var fire in _fires)
             {
                 fire.FireStarted += StartFire;
@@ -24,9 +21,8 @@ namespace FiremanTrial.Fire
                 fire.FireExtinguisherFail += EndFire;
                 fire.fireLevelChanged += Time;
             }
-    
-        }
 
+        }
         private void OnDisable()
         {
             foreach (var fire in _fires)

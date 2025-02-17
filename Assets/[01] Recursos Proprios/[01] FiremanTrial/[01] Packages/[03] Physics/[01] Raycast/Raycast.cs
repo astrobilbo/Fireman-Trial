@@ -11,7 +11,7 @@ namespace FiremanTrial.PhysicsInteraction
         private RaycastHit[] _raycastResults = new RaycastHit[10];
         private IRayCastInteractalble _activeInteractiveObject;
 
-        private void Awake() => InitializeDependencies();
+        private void Start() => InitializeDependencies();
 
         private void FixedUpdate() => PerformRaycastAndUpdateInteractions();
 

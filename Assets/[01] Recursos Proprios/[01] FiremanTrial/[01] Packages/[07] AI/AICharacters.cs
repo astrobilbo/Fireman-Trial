@@ -1,4 +1,6 @@
+using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -6,50 +8,58 @@ public class AICharacters : MonoBehaviour
 {
     private static readonly int Vertical = Animator.StringToHash("Vertical");
     [SerializeField] private Animator animator;
-    [SerializeField] private string scaredAnim;
-    [SerializeField] private string sillyDanceAnim;
     [SerializeField] private NavMeshAgent agent;
-    
+    private Transform activeTarget;
     private Coroutine _moveCoroutine;
+    private bool lookToPlayer=true;
+    private Camera playerCamera;
+    private Camera PlayerCamera
+    {
+        get
+        {
+            if (playerCamera == null)
+                playerCamera = Camera.main;
+            return playerCamera;
+        }
+    }
     
-    public void Scared()
+    private void FixedUpdate()
     {
-        animator.Play(scaredAnim,1);
-    }
+        if (!lookToPlayer) return;
+        if (PlayerCamera == null) return;
+        Vector3 lookDirection = (playerCamera.transform.position - transform.position).normalized;
+        lookDirection.y = 0;
 
-    public void SillyDance()
-    {
-        animator.Play(sillyDanceAnim,1);
+        if (lookDirection == Vector3.zero) return;
+        Quaternion lookRotation = Quaternion.LookRotation(lookDirection);
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
     }
-
-    public void Idle()
-    {
-        animator.Play("Idle",1);
-    }
-
+    
     public void MoveTo(Transform target)
     {
-        agent.SetDestination(target.position);
-        if (_moveCoroutine != null)
-            StopCoroutine(_moveCoroutine);
-
+        if (activeTarget == target) return;
+        if (_moveCoroutine != null) StopCoroutine(_moveCoroutine);
+        activeTarget = target;
         _moveCoroutine = StartCoroutine(UpdateMovement(target));
     }
     
     private IEnumerator UpdateMovement(Transform target)
     {
+        agent.SetDestination(target.position);
         animator.SetFloat(Vertical, 1);
+        lookToPlayer = false;
+
         while (agent.pathPending || agent.remainingDistance > agent.stoppingDistance)
         {
-            Vector3 direction = (target.position - transform.position).normalized;
-            if (direction != Vector3.zero)
+            Vector3 moveDirection = agent.velocity.normalized;
+            if (moveDirection != Vector3.zero)
             {
-                Quaternion targetRotation = Quaternion.LookRotation(direction);
+                Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
                 transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 5f);
             }
             yield return null;
         }
         animator.SetFloat(Vertical, 0);
-        transform.rotation = target.rotation;
+        lookToPlayer = true;
     }
 }

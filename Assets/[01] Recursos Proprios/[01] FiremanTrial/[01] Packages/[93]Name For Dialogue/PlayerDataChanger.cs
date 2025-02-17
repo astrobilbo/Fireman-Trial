@@ -8,12 +8,37 @@ namespace FiremanTrial.DialogueOverride
 
         public void Save()
         {
-            PermanentData.Save(playerData, nameof(PlayerData));
+            var serializableData = new PlayerDataSerializable(playerData);
+            PermanentData.Save(serializableData, nameof(PlayerData));
+
         }
 
         public void Load()
         {
-            playerData= PermanentData.Load(playerData, nameof(PlayerData));
+            var serializableData = PermanentData.Load(new PlayerDataSerializable(playerData), nameof(PlayerData));
+            serializableData.ApplyTo(playerData);
+            playerData.isLoading = true;
+        }
+
+        public void NewGame()
+        {
+            playerData.playerName = "Alex";
+            playerData.isLoading = false;
+        }
+    }
+
+    public class PlayerDataSerializable
+    {
+        public string playerName;
+
+        public PlayerDataSerializable(PlayerData data)
+        {
+            playerName = data.playerName;
+        }
+
+        public void ApplyTo(PlayerData data)
+        {
+            data.playerName = playerName;
         }
     }
 }

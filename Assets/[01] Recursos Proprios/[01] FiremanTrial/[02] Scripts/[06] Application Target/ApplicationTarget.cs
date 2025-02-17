@@ -26,7 +26,7 @@ namespace FiremanTrial
         {
             if (device != SystemInfo.deviceType)
             {
-                Destroy(gameObject);
+                gameObject.SetActive(false);
             }
         }
     }

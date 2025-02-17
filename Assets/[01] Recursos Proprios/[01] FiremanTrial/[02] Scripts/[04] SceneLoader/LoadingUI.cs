@@ -30,7 +30,7 @@ namespace FiremanTrial
         {
             CanvasGroupManager.VisibleAndInteractive(true, loadingPanel);
             progressBar.size = progress;
-            loadingText.text = progress*100 + "%";
+            loadingText.text = (progress*100).ToString("00") + "%";
         }
 
         private void HideLoadingScreen()

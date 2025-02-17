@@ -15,7 +15,7 @@ namespace FiremanTrial.InputManager
         private Vector2 _lastDirection = Vector3.zero;
         private Coroutine _movementCoroutine;
 
-        private void Awake() => _lastDirection = variableJoystick.Direction;
+        private void Start() => _lastDirection = variableJoystick.Direction;
 
         private void OnEnable() => variableJoystick.DirectionChanged += UpdateAxes;
 

@@ -21,7 +21,6 @@ namespace FiremanTrial.Quests
 
         private void Invoke()
         {
-            Debug.Log(quest.name + ": fail");
             actions?.Invoke();
         }
     }

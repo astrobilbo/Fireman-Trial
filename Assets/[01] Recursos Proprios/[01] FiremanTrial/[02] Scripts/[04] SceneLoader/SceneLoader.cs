@@ -17,24 +17,35 @@ namespace FiremanTrial
 
         private IEnumerator LoadSceneAsync(int scene)
         {
+            yield return null;
             AsyncOperation operation = SceneManager.LoadSceneAsync(scene);
             operation.allowSceneActivation = false;
+            
+            float progressSmooth = 0f;
 
             while (!operation.isDone)
             {
-                float progress = Mathf.Clamp01(operation.progress / 0.9f);
-                OnProgressUpdated?.Invoke(progress);
+                OnProgressUpdated?.Invoke(operation.progress);
+                float targetProgress = Mathf.Clamp01(operation.progress / 0.9f);
 
-                // Se o carregamento chegou a 90%, espera a ativação
+                while (progressSmooth < targetProgress)
+                {
+                    progressSmooth = Mathf.MoveTowards(progressSmooth, targetProgress, Time.deltaTime * 0.5f);
+                    OnProgressUpdated?.Invoke(progressSmooth);
+                    yield return null;
+                }
+                
                 if (operation.progress >= 0.9f)
                 {
-                    OnProgressUpdated?.Invoke(1f);
-                    yield return new WaitForSeconds(1f);
-                    OnLoadingComplete?.Invoke();
                     operation.allowSceneActivation = true;
+                    yield return new WaitForSeconds(1f);
+                    OnProgressUpdated?.Invoke(1f);
                 }
                 yield return null;
             }
+            
+            yield return new WaitForSeconds(0.5f);
+            OnLoadingComplete?.Invoke();
         }
     }
 }

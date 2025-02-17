@@ -546,7 +546,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: -38308160, guid: 8599e84b6421be5459d467fc5cb3f5b7, type: 3}
   m_Type: 0
-  m_PreserveAspect: 1
+  m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -1115,7 +1115,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Touch
+  m_text: Celular
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b13dbb860b9cc7743a5c542bd67d4bc5, type: 2}
   m_sharedMaterial: {fileID: -6032839187289821267, guid: b13dbb860b9cc7743a5c542bd67d4bc5, type: 2}
@@ -1885,9 +1885,9 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2072885223758577745}
   m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!114 &1807784811457355241
 MonoBehaviour:

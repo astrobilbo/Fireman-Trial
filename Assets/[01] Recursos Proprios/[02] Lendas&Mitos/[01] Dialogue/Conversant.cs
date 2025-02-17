@@ -44,12 +44,11 @@ namespace LendasEMitos.Dialogue
         }
         public void Quit()
         {
-            if (!CurrentDialogue)return;
             CurrentDialogue = null;
             TriggerExitAction();
             currentNode = null;
             isChoosing = false;
-            currentConversant.inDialogue = false;
+            if (currentConversant != null) currentConversant.inDialogue = false;
             currentConversant=null;
             onConversationUpdated?.Invoke();
         }

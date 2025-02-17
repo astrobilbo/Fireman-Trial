@@ -9,7 +9,7 @@ namespace FiremanTrial.Commands
         private CommandHistory commandHistory;
         public override string CommandID => gameObject.name + "_" + gameObject.GetInstanceID();
 
-        private void Awake()
+        private void Start()
         {
             commandHistory = FindAnyObjectByType<CommandHistory>();
             commandHistory?.AddCommand(this);
@@ -24,6 +24,12 @@ namespace FiremanTrial.Commands
 
         public override bool CanExecute()
         {
+            if (interactiveObject == null)
+            {
+                Debug.Log("Interactive Object is null",this);
+                return false;
+            }
+
             return interactiveObject.CanInteract();
         }
     }

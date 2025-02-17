@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 7100328340416569093}
   - component: {fileID: 145089014705495383}
   - component: {fileID: 1367625126452812997}
-  - component: {fileID: 143388174645322999}
+  - component: {fileID: 312410227193078566}
   m_Layer: 0
   m_Name: WifeController
   m_TagString: Untagged
@@ -59,14 +59,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8469831642267895692}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.8660254, z: -0, w: -0.5}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: -0, w: -0.7071068}
+  m_LocalPosition: {x: 14.835, y: 0.11, z: 40.854}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 829941959866614641}
   m_Father: {fileID: 2207471426934238030}
-  m_LocalEulerAnglesHint: {x: 0, y: 240, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
 --- !u!114 &145089014705495383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,15 +97,15 @@ NavMeshAgent:
   m_Acceleration: 1
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0.1
+  m_StoppingDistance: 0.3
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 1.75
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
---- !u!65 &143388174645322999
+  m_ObstacleAvoidanceType: 2
+--- !u!65 &312410227193078566
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

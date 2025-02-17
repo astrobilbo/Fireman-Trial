@@ -1,22 +1,22 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 
 namespace FiremanTrial.Quests
 {
-    public class QuestWin : MonoBehaviour
+    public class QuestStepCompleted : MonoBehaviour
     {
-        [SerializeField] private Quest quest;
+        [SerializeField] private QuestSteps step;
 
         [SerializeField] private UnityEvent actions;
 
         private void OnEnable()
         {
-            quest.Completed += Invoke;
+            step.Completed += Invoke;
         }
 
         private void OnDisable()
         {
-            quest.Completed -= Invoke;
+            step.Completed -= Invoke;
         }
 
         private void Invoke()

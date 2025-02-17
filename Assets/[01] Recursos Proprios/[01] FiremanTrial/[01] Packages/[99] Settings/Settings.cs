@@ -16,6 +16,7 @@ namespace FiremanTrial.Settings
         public Action<int> OnGraphicsQualityChanged;
         public Action<int> OnVSyncChanged;
         public Action<bool> OnFullScreenChanged;
+        public Action<int> OnSensibilityChanged;
 
 
         private void Awake()
@@ -23,6 +24,7 @@ namespace FiremanTrial.Settings
             data.fullScreen = Screen.fullScreen;
             data.graphicsQuality = QualitySettings.GetQualityLevel();
             data.vSync = QualitySettings.vSyncCount;
+            data.mouseSensibility = 30;
             if (data.frameRate == 0) data.frameRate = 500;
             LoadData();
            
@@ -140,6 +142,20 @@ namespace FiremanTrial.Settings
         {
             return data.graphicsQuality;
         }
+
+        public void ChangeSensibility(int value)
+        {
+            if (data.mouseSensibility == value) return;
+            Debug.Log(value);
+            data.mouseSensibility = value;
+            SaveData();
+            OnSensibilityChanged?.Invoke(data.mouseSensibility);
+        }
+
+        public int GetSensibility()
+        {
+            return data.mouseSensibility;
+        }
         
         private void SaveData()
         {
@@ -178,6 +194,7 @@ namespace FiremanTrial.Settings
         public int graphicsQuality;
         public int vSync;
         public bool fullScreen;
+        public int mouseSensibility;
 
         public static string VolumeKey(VolumeType volumeType)
         {

@@ -92,7 +92,9 @@ namespace FiremanTrial.Quests
         private void PlayOneShotClip(AudioClip clip)
         {
             if (!_audioSource || !soundsFeedback.startClip) return;
-            _audioSource.PlayOneShot( clip);
+            if (_audioSource.isPlaying) return;
+            _audioSource.clip=clip;
+            _audioSource.Play();
         }
     }
 

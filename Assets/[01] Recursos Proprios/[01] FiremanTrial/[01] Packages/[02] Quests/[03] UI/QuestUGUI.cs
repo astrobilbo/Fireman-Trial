@@ -14,7 +14,7 @@ namespace FiremanTrial.Quests.UI
         [SerializeField] private string ContextDefaultText;
         private Quest _activeQuest;
 
-        private void Awake()
+        private void Start()
         {
             UpdateTexts();
         }
@@ -42,9 +42,8 @@ namespace FiremanTrial.Quests.UI
         private void EndQuest()
         {
             if (_activeQuest != null) _activeQuest.UpdateTexts -= UpdateTexts;
-            UpdateTexts();
             _activeQuest = null;
-
+            UpdateTexts();
         }
         private void UpdateTexts()
         {
@@ -54,14 +53,12 @@ namespace FiremanTrial.Quests.UI
                 if (titleText) titleText.text = titleDefaultText;
                 if (stepObjectiveText) stepObjectiveText.text = stepObjectiveDefaultText;
                 if (ContextText) ContextText.text = ContextDefaultText;
-                ContextTitle?.SetActive(false);
                 return;
             }
 
             if (titleText) titleText.text = _activeQuest.uiText.title;
             if (stepObjectiveText) stepObjectiveText.text = _activeQuest.Objective();
             if (ContextText) ContextText.text = _activeQuest.uiText.info;
-            ContextTitle?.SetActive(true);
         }
     }
 }

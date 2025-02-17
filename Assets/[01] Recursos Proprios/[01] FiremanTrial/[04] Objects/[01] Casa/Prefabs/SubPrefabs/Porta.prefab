@@ -338,6 +338,9 @@ MonoBehaviour:
   doorOpenAngle: {x: 0.18301272, y: -0.68301266, z: -0.68301266, w: -0.18301272}
   doorCloseAngle: {x: -0.49999997, y: -0.49999997, z: -0.49999997, w: 0.49999997}
   isOpen: 0
+  interactiveObject: {fileID: 7158505532131479324}
+  rotateTransform: {fileID: 33312834300722683}
+  audioSource: {fileID: 1736249681465955945}
 --- !u!114 &33312834300722683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -362,8 +365,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 6906698277773994224, guid: 8386894a68435004e8dd94622bd51cd0, type: 2}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: c18962aa04f434745b8bdedb44bcbfba, type: 3}
+  m_Resource: {fileID: 8300000, guid: c18962aa04f434745b8bdedb44bcbfba, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -458,6 +461,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9206166182990374349}
+  - component: {fileID: 1819925811198684320}
   m_Layer: 0
   m_Name: Porta
   m_TagString: Untagged
@@ -483,6 +487,22 @@ Transform:
   - {fileID: 301191400295786278}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1819925811198684320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8038953521280505777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2394ffab2bc644b68fbcf3b8e74e953a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quest: {fileID: 0}
+  actions:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8718846290479138179
 GameObject:
   m_ObjectHideFlags: 0
