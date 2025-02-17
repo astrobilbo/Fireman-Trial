@@ -1,4 +1,3 @@
-using System;
 using FiremanTrial.InteraciveObjects;
 using UnityEngine;
 

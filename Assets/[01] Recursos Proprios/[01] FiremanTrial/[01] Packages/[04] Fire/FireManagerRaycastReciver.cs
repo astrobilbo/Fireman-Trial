@@ -1,7 +1,5 @@
-﻿using System;
-using FiremanTrial.PhysicsInteraction;
+﻿using FiremanTrial.PhysicsInteraction;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace FiremanTrial.Fire
 {

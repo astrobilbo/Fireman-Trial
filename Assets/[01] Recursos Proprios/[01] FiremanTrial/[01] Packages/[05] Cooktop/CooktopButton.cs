@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using FiremanTrial.InteraciveObjects;
+﻿using FiremanTrial.InteraciveObjects;
 using FiremanTrial.ScriptAnimator;
 using UnityEngine;
 

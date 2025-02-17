@@ -1,7 +1,5 @@
-using System;
 using LendasEMitos.Dialogue;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace FiremanTrial.Quests
 {

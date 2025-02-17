@@ -1,7 +1,6 @@
 ﻿using FiremanTrial.Inventory;
 using FiremanTrial.PhysicsInteraction;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace FiremanTrial.Extinguisher
 {
