@@ -4,8 +4,7 @@ namespace FiremanTrial
 {
     public class ApplicationTarget : MonoBehaviour
     {
-        [SerializeField] private DeviceType deviceType;
-
+        [SerializeField] private RuntimePlatform platform;
         private static bool _testMode=false;
 
         public static void EnableTestMode()
@@ -17,14 +16,14 @@ namespace FiremanTrial
         {
             if (Application.isEditor && _testMode) return;
             
-            Config(deviceType);
+            Config(Application.platform);
             
         }
 
 
-        public void Config( DeviceType device )
+        public void Config( RuntimePlatform device )
         {
-            if (device != SystemInfo.deviceType)
+            if (device != platform)
             {
                 gameObject.SetActive(false);
             }

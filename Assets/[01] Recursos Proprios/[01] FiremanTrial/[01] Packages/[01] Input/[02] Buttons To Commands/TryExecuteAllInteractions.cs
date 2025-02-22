@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using FiremanTrial.Commands;
 using UnityEngine;
 
@@ -6,27 +8,17 @@ namespace FiremanTrial.InputManager
 {
     public class TryExecuteAllInteractions : MonoBehaviour
     {
-        private List<InteractiveObjectCommand> _interactiveObjectCommand;
-        
+        [SerializeField]private List<InteractiveObjectCommand> interactiveObjectCommand;
         private void Start()
         {
-            _interactiveObjectCommand = new List<InteractiveObjectCommand>(FindObjectsByType<InteractiveObjectCommand>(FindObjectsSortMode.None));
+            interactiveObjectCommand = new List<InteractiveObjectCommand>(FindObjectsByType<InteractiveObjectCommand>(FindObjectsSortMode.None));
         }
 
         public void ExecuteCommands()
         {
-            for (var index = 0; index < _interactiveObjectCommand.Count; index++)
+            foreach (var _interactiveObjectCommand in interactiveObjectCommand.Where(_interactiveObjectCommand => _interactiveObjectCommand.CanExecute()))
             {
-                var command = _interactiveObjectCommand[index];
-                if (command == null)
-                {
-                    _interactiveObjectCommand.RemoveAt(index);
-                    continue;
-                }
-
-                if (!command.CanExecute())return;
-                command.Execute();
-                Debug.Log("Executing Commands");
+                _interactiveObjectCommand.Execute();
             }
         }
     }

@@ -3,7 +3,11 @@
     "rootNamespace": "FiremanTrial.InputManager",
     "references": [
         "GUID:b852d7fc729fd8b499d6303beebab049",
-        "GUID:c11976153efba2f4db5c8e189ea1d094"
+        "GUID:c11976153efba2f4db5c8e189ea1d094",
+        "GUID:b7f51212ed28b80419ac50287b17f30b",
+        "GUID:c50c69c289b20c3419930ec12ca20d1f",
+        "GUID:c8eb0afcf0042434482ad09dc970469a",
+        "GUID:10838060a35de2649876853c1716e537"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

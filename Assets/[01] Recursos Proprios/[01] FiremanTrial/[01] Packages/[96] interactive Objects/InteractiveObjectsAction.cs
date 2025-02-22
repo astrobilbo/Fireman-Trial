@@ -7,11 +7,12 @@ namespace FiremanTrial.InteraciveObjects
 {
     public class InteractiveObjectsAction : MonoBehaviour
     {
-        [SerializeField] private List<InteractiveObject> interactiveObjects;
+        public List<InteractiveObject> interactiveObjects;
         [SerializeField] private CanvasGroup interactionCanvasGroup;
 
         private void Start()
         {
+            CanvasGroupManager.VisibleAndInteractive(false, interactionCanvasGroup);
             SetObserver();
         }
 

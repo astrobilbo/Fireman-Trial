@@ -7,7 +7,7 @@ namespace FiremanTrial.Pan
     {
         [SerializeField] private Pan pan;
 
-        protected override void OnPickUp()
+        public override void OnPickUp()
         {
             base.OnPickUp();
             pan.ActiveLid(this);

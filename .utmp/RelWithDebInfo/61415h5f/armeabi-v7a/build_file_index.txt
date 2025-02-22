@@ -1,0 +1,2 @@
+D:\01 Projetos\Unity\Projects\Fireman Trial\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\CMakeLists.txt
+D:\01 Projetos\Unity\Projects\Fireman Trial\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\CMakeLists.txt

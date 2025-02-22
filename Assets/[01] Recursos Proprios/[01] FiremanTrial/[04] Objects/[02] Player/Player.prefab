@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a7562635b425eb4db00269d005ce460, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deviceType: 1
+  platform: 11
 --- !u!1 &693016787615658221
 GameObject:
   m_ObjectHideFlags: 0
@@ -1057,7 +1057,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a7562635b425eb4db00269d005ce460, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deviceType: 3
+  platform: 2
 --- !u!1 &6205364185023832345
 GameObject:
   m_ObjectHideFlags: 0

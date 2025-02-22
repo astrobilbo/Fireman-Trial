@@ -25,7 +25,7 @@ namespace FiremanTrial.Inventory
 
         private void RemoveObserver() => _interactiveObject.StartInteractionActions -= OnPickUp;
 
-        protected virtual void OnPickUp()
+        public virtual void OnPickUp()
         {
             _inInventory = true;
             _interactiveObject.ExternalInteractionLock(true);

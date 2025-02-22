@@ -10,8 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4629878334360497044}
   - component: {fileID: 7495653351512719231}
-  - component: {fileID: 3849133482423769776}
-  - component: {fileID: 4137600122404931538}
   m_Layer: 0
   m_Name: Command
   m_TagString: Untagged
@@ -31,7 +29,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 3375559828893102018}
   m_Father: {fileID: 8202153339901401516}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7495653351512719231
@@ -47,68 +46,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactiveObject: {fileID: 657153545843269724}
---- !u!114 &3849133482423769776
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2191808546130290634}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8082ab371182d2408d927cbddcca54a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  key: 102
-  keyDown: {fileID: 0}
-  keyPressed: {fileID: 0}
-  keyUp: {fileID: 7495653351512719231}
---- !u!114 &4137600122404931538
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2191808546130290634}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6dbbc88e2b0efc48aff6da2908902f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  key: 323
-  keyDown:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4330509456841916466}
-        m_TargetAssemblyTypeName: FiremanTrial.Extinguisher.FireExtinguisher, FiremanTrial.Extinguisher
-        m_MethodName: ActiveExtinguisher
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  keyPressed:
-    m_PersistentCalls:
-      m_Calls: []
-  keyUp:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4330509456841916466}
-        m_TargetAssemblyTypeName: FiremanTrial.Extinguisher.FireExtinguisher, FiremanTrial.Extinguisher
-        m_MethodName: DesactiveExtinguisher
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &2447278619359024129
 GameObject:
   m_ObjectHideFlags: 0
@@ -5178,6 +5115,115 @@ Transform:
   - {fileID: 8202153339901401516}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8893389002114288535
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3375559828893102018}
+  - component: {fileID: 6251826875549132814}
+  - component: {fileID: 1693159034886776641}
+  - component: {fileID: 2824752387587853668}
+  m_Layer: 0
+  m_Name: WindowsInput
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3375559828893102018
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8893389002114288535}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4629878334360497044}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6251826875549132814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8893389002114288535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8082ab371182d2408d927cbddcca54a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: 102
+  keyDown: {fileID: 0}
+  keyPressed: {fileID: 0}
+  keyUp: {fileID: 7495653351512719231}
+--- !u!114 &1693159034886776641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8893389002114288535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6dbbc88e2b0efc48aff6da2908902f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: 323
+  keyDown:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4330509456841916466}
+        m_TargetAssemblyTypeName: FiremanTrial.Extinguisher.FireExtinguisher, FiremanTrial.Extinguisher
+        m_MethodName: ActiveExtinguisher
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  keyPressed:
+    m_PersistentCalls:
+      m_Calls: []
+  keyUp:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4330509456841916466}
+        m_TargetAssemblyTypeName: FiremanTrial.Extinguisher.FireExtinguisher, FiremanTrial.Extinguisher
+        m_MethodName: DesactiveExtinguisher
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2824752387587853668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8893389002114288535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a7562635b425eb4db00269d005ce460, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  platform: 2
 --- !u!1001 &8484820426762921187
 PrefabInstance:
   m_ObjectHideFlags: 0

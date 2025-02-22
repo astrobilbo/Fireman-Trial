@@ -6,7 +6,7 @@ namespace FiremanTrial
     {
 #if UNITY_EDITOR
         
-        [SerializeField] private DeviceType testDeviceType;
+        [SerializeField] private RuntimePlatform testDeviceType;
 
         public void Awake()
         {

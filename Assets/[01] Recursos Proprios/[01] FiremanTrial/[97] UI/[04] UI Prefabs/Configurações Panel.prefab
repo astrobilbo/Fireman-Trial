@@ -8246,7 +8246,7 @@ MonoBehaviour:
     graphicsQuality: 0
     vSync: 0
     fullScreen: 0
-    mouseSensibility: 30
+    mouseSensibility: 50
 --- !u!1 &9152122913998763005
 GameObject:
   m_ObjectHideFlags: 0
